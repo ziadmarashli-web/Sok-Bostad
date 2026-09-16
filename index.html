@@ -20,6 +20,31 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
   @keyframes fadeIn{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
   .card{transition:box-shadow .15s ease,transform .15s ease;}
   .card:hover{box-shadow:0 4px 16px rgba(20,75,124,.10);}
+  /* Besök på delad dator: samma tydliga avslut som i Jobbvägen */
+  .session-tools{margin:28px 0 6px;padding-top:20px;border-top:1px solid #d8dee6;}
+  .session-actions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:12px;}
+  .session-btn{min-height:58px;border-radius:18px;padding:12px 18px;font-size:16px;font-weight:800;line-height:1.25;display:flex;align-items:center;justify-content:center;gap:9px;text-align:center;transition:transform .12s ease,box-shadow .12s ease,background .12s ease;}
+  .session-btn:active{transform:translateY(1px);}
+  .session-save{background:#eef6ff;color:#145a91;border:2px solid #9fc5ea;}
+  .session-save:hover{background:#e2f0ff;box-shadow:0 3px 10px rgba(20,75,124,.08);}
+  .session-exit{background:#bd251b;color:#fff;border:2px solid #bd251b;}
+  .session-exit:hover{background:#a91f17;border-color:#a91f17;box-shadow:0 3px 10px rgba(169,31,23,.16);}
+  .session-hint{margin:10px 4px 0;color:#64748b;font-size:12px;line-height:1.5;text-align:center;}
+  @media(max-width:640px){.session-actions{grid-template-columns:1fr}.session-btn{min-height:54px;border-radius:16px;font-size:15px}.session-tools{margin-top:22px}}
+  .choice-modal{position:fixed;inset:0;z-index:70;background:rgba(15,23,42,.62);display:flex;align-items:center;justify-content:center;padding:16px;}
+  .choice-modal.hidden{display:none;}
+  .choice-dialog{width:min(560px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:20px;padding:22px;box-shadow:0 24px 70px rgba(15,23,42,.28);}
+  .choice-dialog h2{margin:0 0 6px;font-size:22px;line-height:1.25;color:#0f172a;font-weight:800;}
+  .choice-dialog>p{margin:0 0 16px;color:#64748b;font-size:14px;line-height:1.5;}
+  .choice-option{width:100%;display:flex;gap:13px;align-items:flex-start;text-align:left;background:#fff;border:1px solid #d7dee7;border-radius:14px;padding:15px;margin:10px 0;cursor:pointer;color:#1e293b;}
+  body.rtl .choice-option{text-align:right;}
+  .choice-option:hover,.choice-option:focus{border-color:#1a5e9a;box-shadow:0 0 0 3px rgba(26,94,154,.12);outline:none;}
+  .choice-option.danger-choice{border-color:#efc1bd;background:#fff8f7;}
+  .choice-icon{font-size:27px;line-height:1;flex:0 0 auto;}
+  .choice-copy b{display:block;font-size:16px;margin-bottom:4px;}
+  .choice-copy small{display:block;color:#64748b;font-size:13px;line-height:1.45;}
+  .choice-actions{display:flex;justify-content:flex-end;margin-top:16px;}
+  .choice-cancel{border:1px solid #cbd5e1;background:#fff;color:#334155;border-radius:11px;padding:10px 16px;font-weight:700;}
   @media print{header,nav,.hide-print{display:none !important;}body{background:#fff;}main{padding:0 !important;max-width:100% !important;}.card{page-break-inside:avoid;border:1px solid #ccc !important;box-shadow:none !important;}}
 </style>
 
@@ -494,6 +519,38 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
   </div>
 </div>
 
+<div id="saveChoiceModal" class="choice-modal hidden" role="dialog" aria-modal="true" aria-labelledby="saveChoiceTitle">
+  <div class="choice-dialog">
+    <h2 id="saveChoiceTitle"></h2>
+    <p id="saveChoiceDesc"></p>
+    <button id="saveChoiceQr" class="choice-option" type="button">
+      <span class="choice-icon" aria-hidden="true">📱</span>
+      <span class="choice-copy"><b id="saveChoiceQrTitle"></b><small id="saveChoiceQrDesc"></small></span>
+    </button>
+    <button id="saveChoiceFile" class="choice-option" type="button">
+      <span class="choice-icon" aria-hidden="true">💾</span>
+      <span class="choice-copy"><b id="saveChoiceFileTitle"></b><small id="saveChoiceFileDesc"></small></span>
+    </button>
+    <div class="choice-actions"><button id="saveChoiceCancel" class="choice-cancel" type="button"></button></div>
+  </div>
+</div>
+
+<div id="exitChoiceModal" class="choice-modal hidden" role="dialog" aria-modal="true" aria-labelledby="exitChoiceTitle">
+  <div class="choice-dialog">
+    <h2 id="exitChoiceTitle"></h2>
+    <p id="exitChoiceDesc"></p>
+    <button id="exitChoiceSave" class="choice-option" type="button">
+      <span class="choice-icon" aria-hidden="true">💾</span>
+      <span class="choice-copy"><b id="exitChoiceSaveTitle"></b><small id="exitChoiceSaveDesc"></small></span>
+    </button>
+    <button id="exitChoiceClear" class="choice-option danger-choice" type="button">
+      <span class="choice-icon" aria-hidden="true">🗑️</span>
+      <span class="choice-copy"><b id="exitChoiceClearTitle"></b><small id="exitChoiceClearDesc"></small></span>
+    </button>
+    <div class="choice-actions"><button id="exitChoiceCancel" class="choice-cancel" type="button"></button></div>
+  </div>
+</div>
+
 <main class="flex-1 max-w-4xl w-full mx-auto p-4 md:py-6">
   <div class="print-head hidden border-b pb-4 mb-4"><h1 id="printTitle" class="text-2xl font-bold"></h1><p id="printDate" class="text-sm text-slate-500"></p></div>
 
@@ -606,6 +663,8 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
       <div class="px-4 pb-4 space-y-3">
         <p id="backupDescText" class="text-[11px] text-slate-500 leading-relaxed"></p>
         <button id="btnExport" class="w-full py-2 px-3 bg-brand-50 text-brand-600 hover:bg-brand-100 rounded-xl text-xs font-bold border border-brand-100"></button>
+        <button id="btnImportFile" class="w-full py-2 px-3 bg-white text-brand-600 hover:bg-brand-50 rounded-xl text-xs font-bold border border-brand-100"></button>
+        <input id="savedFileInput" type="file" accept=".sokbostad,application/json" class="hidden">
         <div class="border-t border-slate-100 pt-3 space-y-2">
           <input type="text" id="backupInput" class="w-full border border-slate-200 rounded-lg p-2 text-xs outline-none focus:ring-1 focus:ring-brand-500">
           <button id="btnImport" class="w-full py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold"></button>
@@ -616,6 +675,15 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
 
   <!-- INFO -->
   <section class="panel hidden space-y-4" id="panel-info"><div id="infoContent" class="space-y-4"></div></section>
+
+  <section class="session-tools hide-print" aria-label="Besöksalternativ">
+    <div class="session-actions">
+      <button id="btnSaveVisit" type="button" class="session-btn session-save"><span aria-hidden="true">💾</span><span id="saveVisitText"></span></button>
+      <button id="btnEndVisit" type="button" class="session-btn session-exit"><span id="endVisitText"></span></button>
+    </div>
+    <p id="sessionHint" class="session-hint"></p>
+  </section>
+
   <div id="reviewedFooter" class="text-center text-[11px] text-slate-500 py-6 hide-print"></div>
 </main>
 
@@ -652,6 +720,31 @@ function companyForId(id){
 function idOf(c){ return c._id || companyId(c); }
 
 var EXTRA_I18N={"sv":{"choose_ort":"Välj ort…","choose_first":"Välj en ort ovan för att se hyresvärdar.","search_question":"Var vill du söka bostad?","search_hint":"Välj en ort. Du kan ändra senare.","advanced_filters":"Fler filter","open_and_register":"Öppna och registrera dig","save_to_list":"Spara i Min lista","registered_done":"Jag har registrerat mig","registered_date":"Registrerad den","add_note":"Lägg till anteckning","status_not":"Inte registrerad","status_reg":"Registrerad hos hyresvärden","status_active":"Söker bostäder aktivt","qr_title":"Fortsätt på mobilen","qr_desc":"Skanna QR-koden med mobilen. Din lista och dina statusar följer med.","qr_show":"Visa QR-kod","qr_scan":"Skanna med mobilens kamera och öppna länken.","qr_copy":"Kopiera mobillänk","qr_privacy":"QR-koden skapas på din dator. Dela den inte om listan innehåller personliga anteckningar.","qr_too_long":"Listan är för stor för QR-kod. Ta bort långa anteckningar eller använd backup-koden.","transfer_success":"Listan har flyttats till den här enheten.","reviewed":"Senast kontrollerad: 16 september 2026","help_how":"Så söker du bostad","help_need":"Vad behöver jag?","help_words":"Viktiga bostadsord","help_safety":"Trygghet – undvik bedrägerier","help_types":"Typer av hyresvärdar","help_points":"Köpoäng och kötid","help_map":"Orter i Västra Götaland","region_notice":"Västra Götaland: Den här versionen visar bara orter i Västra Götaland.","help_map_intro":"Välj gärna en ort först. Tryck på en ort nedan för vägbeskrivning eller gå till Sök för att se hyresvärdar.","group_near":"Nära Göteborg","group_mid":"Lite längre bort","group_far":"Längre bort"},"en":{"choose_ort":"Choose town…","choose_first":"Choose a town above to see landlords.","search_question":"Where do you want to look for housing?","search_hint":"Choose a town. You can change it later.","advanced_filters":"More filters","open_and_register":"Open and register","save_to_list":"Save to My list","registered_done":"I have registered","registered_date":"Registered on","add_note":"Add note","status_not":"Not registered","status_reg":"Registered with landlord","status_active":"Actively applying for homes","qr_title":"Continue on your phone","qr_desc":"Scan the QR code with your phone. Your list and statuses will follow.","qr_show":"Show QR code","qr_scan":"Scan with your phone camera and open the link.","qr_copy":"Copy mobile link","qr_privacy":"The QR code is created on your computer. Do not share it if your list contains personal notes.","qr_too_long":"The list is too large for a QR code. Remove long notes or use the backup code.","transfer_success":"The list has been moved to this device.","reviewed":"Last checked: 16 September 2026","help_how":"How to search for housing","help_need":"What do I need?","help_words":"Important housing words","help_safety":"Safety – avoid scams","help_types":"Types of landlords","help_points":"Queue points and queue time","help_map":"Towns in Västra Götaland","region_notice":"Västra Götaland: This version only shows towns in Västra Götaland.","help_map_intro":"Choose a town first. Tap a town below for directions, or go to Search to see landlords.","group_near":"Near Göteborg","group_mid":"A bit farther away","group_far":"Farther away"},"ar":{"choose_ort":"اختر مدينة…","choose_first":"اختر مدينة أعلاه لعرض المؤجرين.","search_question":"أين تريد البحث عن سكن؟","search_hint":"اختر مدينة. يمكنك تغييرها لاحقًا.","advanced_filters":"خيارات إضافية","open_and_register":"افتح الموقع وسجّل","save_to_list":"احفظ في قائمتي","registered_done":"لقد سجلت","registered_date":"تاريخ التسجيل","add_note":"إضافة ملاحظة","status_not":"غير مسجّل","status_reg":"مسجّل لدى المؤجر","status_active":"أبحث عن مساكن بشكل نشط","qr_title":"تابع على الهاتف","qr_desc":"امسح رمز QR بهاتفك. ستنتقل قائمتك وحالاتها معك.","qr_show":"إظهار رمز QR","qr_scan":"امسح الرمز بكاميرا الهاتف وافتح الرابط.","qr_copy":"نسخ رابط الهاتف","qr_privacy":"يتم إنشاء رمز QR على جهازك. لا تشاركه إذا كانت القائمة تحتوي ملاحظات شخصية.","qr_too_long":"القائمة كبيرة جدًا لرمز QR. احذف الملاحظات الطويلة أو استخدم رمز النسخة الاحتياطية.","transfer_success":"تم نقل القائمة إلى هذا الجهاز.","reviewed":"آخر مراجعة: 16 سبتمبر 2026","help_how":"كيف تبحث عن سكن","help_need":"ماذا أحتاج؟","help_words":"كلمات سكن مهمة","help_safety":"الأمان – تجنب الاحتيال","help_types":"أنواع المؤجرين","help_points":"نقاط ومدة الانتظار","help_map":"إظهار المدن على الخريطة"},"uk":{"choose_ort":"Виберіть місто…","choose_first":"Виберіть місто вище, щоб побачити орендодавців.","search_question":"Де ви хочете шукати житло?","search_hint":"Виберіть місто. Його можна змінити пізніше.","advanced_filters":"Більше фільтрів","open_and_register":"Відкрити та зареєструватися","save_to_list":"Зберегти у Мій список","registered_done":"Я зареєструвався","registered_date":"Дата реєстрації","add_note":"Додати нотатку","status_not":"Не зареєстровано","status_reg":"Зареєстровано в орендодавця","status_active":"Активно шукаю житло","qr_title":"Продовжити на телефоні","qr_desc":"Відскануйте QR-код телефоном. Ваш список і статуси перенесуться.","qr_show":"Показати QR-код","qr_scan":"Відскануйте камерою телефона та відкрийте посилання.","qr_copy":"Копіювати мобільне посилання","qr_privacy":"QR-код створюється на вашому комп’ютері. Не діліться ним, якщо список містить особисті нотатки.","qr_too_long":"Список завеликий для QR-коду. Видаліть довгі нотатки або використайте резервний код.","transfer_success":"Список перенесено на цей пристрій.","reviewed":"Остання перевірка: 16 вересня 2026","help_how":"Як шукати житло","help_need":"Що мені потрібно?","help_words":"Важливі слова про житло","help_safety":"Безпека – уникайте шахрайства","help_types":"Типи орендодавців","help_points":"Бали та час у черзі","help_map":"Показати міста на карті"},"fa":{"choose_ort":"شهر را انتخاب کنید…","choose_first":"برای دیدن صاحب‌خانه‌ها یک شهر انتخاب کنید.","search_question":"کجا می‌خواهید دنبال مسکن بگردید؟","search_hint":"یک شهر انتخاب کنید. بعداً می‌توانید آن را تغییر دهید.","advanced_filters":"فیلترهای بیشتر","open_and_register":"باز کن و ثبت‌نام کن","save_to_list":"ذخیره در فهرست من","registered_done":"ثبت‌نام کرده‌ام","registered_date":"تاریخ ثبت‌نام","add_note":"افزودن یادداشت","status_not":"ثبت‌نام نشده","status_reg":"نزد صاحب‌خانه ثبت‌نام شده","status_active":"فعالانه دنبال خانه هستم","qr_title":"ادامه در تلفن","qr_desc":"کد QR را با تلفن اسکن کنید. فهرست و وضعیت‌ها منتقل می‌شوند.","qr_show":"نمایش کد QR","qr_scan":"با دوربین تلفن اسکن کنید و لینک را باز کنید.","qr_copy":"کپی لینک تلفن","qr_privacy":"کد QR روی رایانه شما ساخته می‌شود. اگر یادداشت شخصی دارید آن را به اشتراک نگذارید.","qr_too_long":"فهرست برای کد QR خیلی بزرگ است. یادداشت‌های طولانی را حذف کنید یا از کد پشتیبان استفاده کنید.","transfer_success":"فهرست به این دستگاه منتقل شد.","reviewed":"آخرین بررسی: ۱۶ سپتامبر ۲۰۲۶","help_how":"چگونه مسکن جستجو کنیم","help_need":"چه چیزهایی لازم دارم؟","help_words":"واژه‌های مهم مسکن","help_safety":"امنیت – از کلاهبرداری دوری کنید","help_types":"انواع صاحب‌خانه","help_points":"امتیاز و زمان صف","help_map":"نمایش شهرها روی نقشه"},"so":{"choose_ort":"Dooro magaalo…","choose_first":"Dooro magaalo kore si aad u aragto kireeyayaasha.","search_question":"Xaggee ayaad rabtaa inaad guri ka raadiso?","search_hint":"Dooro magaalo. Waad beddeli kartaa dambe.","advanced_filters":"Shaandhooyin dheeraad ah","open_and_register":"Fur oo isdiiwaangeli","save_to_list":"Ku kaydi Liiskayga","registered_done":"Waan isdiiwaangeliyey","registered_date":"Taariikhda diiwaangelinta","add_note":"Ku dar qoraal","status_not":"Lama diiwaangelin","status_reg":"Kireeyaha waa laga diiwaangashan yahay","status_active":"Si firfircoon guri ayaan u raadinayaa","qr_title":"Ku sii wad telefoonka","qr_desc":"QR-ka ku sawir telefoonka. Liiskaaga iyo xaaladaha ayaa kula wareegaya.","qr_show":"Muuji QR","qr_scan":"Ku sawir kamaradda telefoonka oo fur linkiga.","qr_copy":"Koobi linkiga telefoonka","qr_privacy":"QR-ka waxaa lagu sameeyaa kombiyuutarkaaga. Ha wadaagin haddii liisku leeyahay qoraallo gaar ah.","qr_too_long":"Liisku aad buu ugu weyn yahay QR. Ka saar qoraallada dhaadheer ama isticmaal koodhka kaydka.","transfer_success":"Liiska waxaa loo wareejiyey qalabkan.","reviewed":"Markii ugu dambeysay la hubiyey: 16 Sebtembar 2026","help_how":"Sida guri loo raadiyo","help_need":"Maxaan u baahanahay?","help_words":"Erayada muhiimka ah ee guryaha","help_safety":"Badbaado – ka fogow khiyaanada","help_types":"Noocyada kireeyayaasha","help_points":"Dhibcaha iyo waqtiga safka","help_map":"Muuji magaalooyinka khariidadda"},"ti":{"choose_ort":"ከተማ ምረጽ…","choose_first":"ኣካረይቲ ንምርኣይ ኣብ ላዕሊ ከተማ ምረጽ።","search_question":"ኣበይ መንበሪ ክትደሊ ትደሊ?","search_hint":"ከተማ ምረጽ። ድሕሪኡ ክትቕይሮ ትኽእል።","advanced_filters":"ተወሳኺ መጻረዪ","open_and_register":"ክፈትን ተመዝገብን","save_to_list":"ኣብ ዝርዝረይ ዓቅብ","registered_done":"ተመዝጊበ ኣለኹ","registered_date":"ዕለት ምዝገባ","add_note":"መዘኻኸሪ ወስኽ","status_not":"ኣይተመዝገበን","status_reg":"ኣብ ኣካራዪ ተመዝጊቡ","status_active":"ብንጥፈት መንበሪ ይድለ ኣለኹ","qr_title":"ኣብ ሞባይል ቀጽል","qr_desc":"QR ብሞባይልካ ስካን ግበር። ዝርዝርካን ኩነታትካን ይሰጋገሩ።","qr_show":"QR ኣርኢ","qr_scan":"ብካሜራ ሞባይል ስካን ግበር እሞ ሊንክ ክፈት።","qr_copy":"ሊንክ ሞባይል ቅዳሕ","qr_privacy":"QR ኣብ ኮምፒተርካ ይፍጠር። ውልቃዊ መዘኻኸሪ እንተሃልዩ ኣይትካፈሎ።","qr_too_long":"ዝርዝሩ ንQR ብዙሕ እዩ። ነዊሕ መዘኻኸሪ ኣጥፍእ ወይ ኮድ ባክኣፕ ተጠቐም።","transfer_success":"ዝርዝሩ ናብዚ መሳርሒ ተሰጋጊሩ።","reviewed":"መወዳእታ ዝተረጋገጸ: 16 ሴፕቴምበር 2026","help_how":"መንበሪ ከመይ ይድለ","help_need":"እንታይ የድልየኒ?","help_words":"ኣገደስቲ ናይ መንበሪ ቃላት","help_safety":"ድሕነት – ምትላል ኣወግድ","help_types":"ዓይነታት ኣካረይቲ","help_points":"ነጥቢን ግዜን ሰልፊ","help_map":"ከተማታት ኣብ ካርታ ኣርኢ"},"rw":{"choose_ort":"Hitamo agace…","choose_first":"Hitamo agace hejuru kugira ngo ubone abakodesha.","search_question":"Ni he ushaka gushakira icumbi?","search_hint":"Hitamo agace. Ushobora kugahindura nyuma.","advanced_filters":"Andi mahitamo","open_and_register":"Fungura wiyandikishe","save_to_list":"Bika ku Rutonde rwanjye","registered_done":"Narayiyandikishijemo","registered_date":"Itariki yo kwiyandikisha","add_note":"Ongeraho inyandiko","status_not":"Ntibyanditswe","status_reg":"Wanditswe ku mukodesha","status_active":"Ndi gushaka amazu mu buryo bukomeza","qr_title":"Komeza kuri telefone","qr_desc":"Sikana QR na telefone. Urutonde n’imiterere yawe birimukana.","qr_show":"Erekana QR","qr_scan":"Sikana na kamera ya telefone ufungure umurongo.","qr_copy":"Koporora umurongo wa telefone","qr_privacy":"QR ikorerwa kuri mudasobwa yawe. Ntuyisangize abandi niba harimo inyandiko bwite.","qr_too_long":"Urutonde ni runini cyane kuri QR. Siba inyandiko ndende cyangwa ukoreshe kode ya backup.","transfer_success":"Urutonde rwimuriwe kuri iki gikoresho.","reviewed":"Byaherukaga kugenzurwa: 16 Nzeri 2026","help_how":"Uko ushakisha icumbi","help_need":"Nkeneye iki?","help_words":"Amagambo y’ingenzi y’icumbi","help_safety":"Umutekano – irinde uburiganya","help_types":"Ubwoko bw’abakodesha","help_points":"Amanota n’igihe cy’urutonde","help_map":"Erekana uturere ku ikarita"},"sw":{"choose_ort":"Chagua mji…","choose_first":"Chagua mji hapo juu ili uone wapangishaji.","search_question":"Unataka kutafuta makazi wapi?","search_hint":"Chagua mji. Unaweza kuubadilisha baadaye.","advanced_filters":"Vichujio zaidi","open_and_register":"Fungua na ujisajili","save_to_list":"Hifadhi kwenye Orodha yangu","registered_done":"Nimejisajili","registered_date":"Tarehe ya usajili","add_note":"Ongeza maelezo","status_not":"Haijasajiliwa","status_reg":"Imesajiliwa kwa mpangishaji","status_active":"Natafuta makazi kikamilifu","qr_title":"Endelea kwenye simu","qr_desc":"Skan QR kwa simu. Orodha na hali zako zitahamia pia.","qr_show":"Onyesha QR","qr_scan":"Skan kwa kamera ya simu na ufungue kiungo.","qr_copy":"Nakili kiungo cha simu","qr_privacy":"QR hutengenezwa kwenye kompyuta yako. Usiishiriki ikiwa orodha ina maelezo binafsi.","qr_too_long":"Orodha ni kubwa sana kwa QR. Ondoa maelezo marefu au tumia msimbo wa nakala.","transfer_success":"Orodha imehamishwa kwenye kifaa hiki.","reviewed":"Ilidhibitiwa mwisho: 16 Septemba 2026","help_how":"Jinsi ya kutafuta makazi","help_need":"Ninahitaji nini?","help_words":"Maneno muhimu ya makazi","help_safety":"Usalama – epuka utapeli","help_types":"Aina za wapangishaji","help_points":"Pointi na muda wa foleni","help_map":"Onyesha miji kwenye ramani"}};
+var SESSION_I18N={
+  sv:{session_save:"Spara för senare",session_exit:"Avsluta besök – rensa allt",session_hint:"Spara bara på en privat dator eller mobil. På en delad dator: avsluta besöket och rensa allt.",session_saved:"Din lista är sparad på den här enheten.",session_exit_title:"Avsluta besök",session_exit_confirm:"All sparad information i Sök bostad på den här enheten tas bort. Vill du avsluta besöket?",session_exit_yes:"Ja, rensa allt"},
+  en:{session_save:"Save for later",session_exit:"End visit – clear everything",session_hint:"Only save on a private computer or phone. On a shared computer, end the visit and clear everything.",session_saved:"Your list is saved on this device.",session_exit_title:"End visit",session_exit_confirm:"All saved information from Find housing on this device will be removed. Do you want to end the visit?",session_exit_yes:"Yes, clear everything"},
+  ar:{session_save:"حفظ لوقت لاحق",session_exit:"إنهاء الزيارة – مسح كل شيء",session_hint:"احفظ فقط على جهاز كمبيوتر أو هاتف خاص. على جهاز مشترك، أنهِ الزيارة وامسح كل شيء.",session_saved:"تم حفظ قائمتك على هذا الجهاز.",session_exit_title:"إنهاء الزيارة",session_exit_confirm:"سيتم حذف جميع المعلومات المحفوظة في تطبيق البحث عن سكن من هذا الجهاز. هل تريد إنهاء الزيارة؟",session_exit_yes:"نعم، امسح كل شيء"},
+  uk:{session_save:"Зберегти на потім",session_exit:"Завершити візит – очистити все",session_hint:"Зберігайте лише на приватному комп’ютері або телефоні. На спільному комп’ютері завершіть візит і очистіть усе.",session_saved:"Ваш список збережено на цьому пристрої.",session_exit_title:"Завершити візит",session_exit_confirm:"Уся збережена інформація про пошук житла на цьому пристрої буде видалена. Завершити візит?",session_exit_yes:"Так, очистити все"},
+  fa:{session_save:"ذخیره برای بعد",session_exit:"پایان بازدید – پاک کردن همه",session_hint:"فقط روی رایانه یا تلفن شخصی ذخیره کنید. در رایانه مشترک، بازدید را پایان دهید و همه چیز را پاک کنید.",session_saved:"فهرست شما روی این دستگاه ذخیره شد.",session_exit_title:"پایان بازدید",session_exit_confirm:"تمام اطلاعات ذخیره‌شده برنامه جستجوی مسکن در این دستگاه حذف می‌شود. آیا می‌خواهید بازدید را پایان دهید؟",session_exit_yes:"بله، همه را پاک کن"},
+  so:{session_save:"Kaydi mar dambe",session_exit:"Dhammee booqashada – tirtir dhammaan",session_hint:"Ku kaydi oo keliya kombiyuutar ama telefoon gaar ah. Kombiyuutar la wadaago, dhammee booqashada oo tirtir dhammaan.",session_saved:"Liiskaaga waxaa lagu kaydiyey qalabkan.",session_exit_title:"Dhammee booqashada",session_exit_confirm:"Dhammaan xogta Sök bostad ee ku kaydsan qalabkan waa la tirtirayaa. Ma rabtaa inaad booqashada dhamayso?",session_exit_yes:"Haa, tirtir dhammaan"},
+  ti:{session_save:"ንድሕሪት ዓቅብ",session_exit:"ምብጻሕ ወድእ – ኩሉ ደምስስ",session_hint:"ኣብ ውልቃዊ ኮምፒተር ወይ ሞባይል ጥራይ ዓቅብ። ኣብ ዝካፈል ኮምፒተር ምብጻሕ ወድእ እሞ ኩሉ ደምስስ።",session_saved:"ዝርዝርካ ኣብዚ መሳርሒ ተዓቂቡ።",session_exit_title:"ምብጻሕ ወድእ",session_exit_confirm:"ኣብዚ መሳርሒ ዝተዓቀበ ኩሉ ሓበሬታ ናይ Sök bostad ክድምሰስ እዩ። ምብጻሕ ክትውድእ ትደሊ?",session_exit_yes:"እወ፣ ኩሉ ደምስስ"},
+  rw:{session_save:"Bika kugira ngo ukomeze nyuma",session_exit:"Soza gusura – siba byose",session_hint:"Bika gusa kuri mudasobwa cyangwa telefone yawe bwite. Kuri mudasobwa isangiwe, soza gusura kandi usibe byose.",session_saved:"Urutonde rwawe rwabitswe kuri iki gikoresho.",session_exit_title:"Soza gusura",session_exit_confirm:"Amakuru yose yabitswe muri Sök bostad kuri iki gikoresho arasibwa. Urashaka gusoza gusura?",session_exit_yes:"Yego, siba byose"},
+  sw:{session_save:"Hifadhi kwa baadaye",session_exit:"Maliza ziara – futa kila kitu",session_hint:"Hifadhi tu kwenye kompyuta au simu binafsi. Kwenye kompyuta ya pamoja, maliza ziara na ufute kila kitu.",session_saved:"Orodha yako imehifadhiwa kwenye kifaa hiki.",session_exit_title:"Maliza ziara",session_exit_confirm:"Taarifa zote zilizohifadhiwa za Tafuta makazi kwenye kifaa hiki zitafutwa. Unataka kumaliza ziara?",session_exit_yes:"Ndiyo, futa kila kitu"}
+};
+Object.keys(SESSION_I18N).forEach(function(code){ EXTRA_I18N[code]=Object.assign(EXTRA_I18N[code]||{},SESSION_I18N[code]); });
+var CHOICE_I18N={
+ sv:{save_choice_title:"Hur vill du spara?",save_choice_desc:"Välj hur du vill ta med din lista från den här datorn.",save_qr:"Till mobilen med QR-kod",save_qr_desc:"Skanna med mobilen. Din lista och dina statusar följer med.",save_file:"Spara fil",save_file_desc:"Spara en fortsättningsfil som du kan öppna senare i Sök bostad.",exit_choice_title:"Avsluta besöket?",exit_choice_desc:"Vill du spara din lista innan allt rensas?",exit_save:"Spara för senare och avsluta",exit_save_desc:"Spara en fortsättningsfil. När filen har sparats rensas besöket.",exit_clear:"Rensa utan att spara",exit_clear_desc:"Min lista, status, anteckningar och tillfälliga uppgifter raderas.",open_saved_file:"Öppna sparad fil",file_saved:"Filen är sparad.",file_import_success:"Din sparade lista har öppnats.",file_import_invalid:"Filen kunde inte läsas."},
+ en:{save_choice_title:"How do you want to save?",save_choice_desc:"Choose how you want to take your list with you from this computer.",save_qr:"To your phone with QR code",save_qr_desc:"Scan with your phone. Your list and statuses will follow.",save_file:"Save file",save_file_desc:"Save a continuation file that you can open later in Find housing.",exit_choice_title:"End the visit?",exit_choice_desc:"Do you want to save your list before everything is cleared?",exit_save:"Save for later and end",exit_save_desc:"Save a continuation file. After it is saved, the visit is cleared.",exit_clear:"Clear without saving",exit_clear_desc:"My list, statuses, notes and temporary visit data are deleted.",open_saved_file:"Open saved file",file_saved:"The file has been saved.",file_import_success:"Your saved list has been opened.",file_import_invalid:"The file could not be read."},
+ ar:{save_choice_title:"كيف تريد الحفظ؟",save_choice_desc:"اختر كيف تريد نقل قائمتك من هذا الكمبيوتر.",save_qr:"إلى الهاتف عبر رمز QR",save_qr_desc:"امسح الرمز بهاتفك. ستنتقل قائمتك وحالاتها معك.",save_file:"حفظ ملف",save_file_desc:"احفظ ملف متابعة يمكنك فتحه لاحقًا في تطبيق البحث عن سكن.",exit_choice_title:"إنهاء الزيارة؟",exit_choice_desc:"هل تريد حفظ قائمتك قبل مسح كل شيء؟",exit_save:"احفظ لوقت لاحق ثم أنهِ",exit_save_desc:"احفظ ملف متابعة. بعد حفظه سيتم مسح بيانات الزيارة.",exit_clear:"امسح بدون حفظ",exit_clear_desc:"سيتم حذف قائمتي والحالات والملاحظات وبيانات الزيارة المؤقتة.",open_saved_file:"فتح ملف محفوظ",file_saved:"تم حفظ الملف.",file_import_success:"تم فتح قائمتك المحفوظة.",file_import_invalid:"تعذر قراءة الملف."},
+ uk:{save_choice_title:"Як ви хочете зберегти?",save_choice_desc:"Виберіть, як перенести свій список із цього комп’ютера.",save_qr:"На телефон за QR-кодом",save_qr_desc:"Відскануйте телефоном. Ваш список і статуси перенесуться.",save_file:"Зберегти файл",save_file_desc:"Збережіть файл продовження, який можна відкрити пізніше в пошуку житла.",exit_choice_title:"Завершити візит?",exit_choice_desc:"Зберегти список перед очищенням?",exit_save:"Зберегти на потім і завершити",exit_save_desc:"Збережіть файл продовження. Після збереження дані візиту буде очищено.",exit_clear:"Очистити без збереження",exit_clear_desc:"Мій список, статуси, нотатки й тимчасові дані буде видалено.",open_saved_file:"Відкрити збережений файл",file_saved:"Файл збережено.",file_import_success:"Збережений список відкрито.",file_import_invalid:"Не вдалося прочитати файл."},
+ fa:{save_choice_title:"چگونه می‌خواهید ذخیره کنید؟",save_choice_desc:"انتخاب کنید چگونه فهرست خود را از این رایانه همراه ببرید.",save_qr:"به تلفن با کد QR",save_qr_desc:"با تلفن اسکن کنید. فهرست و وضعیت‌ها منتقل می‌شوند.",save_file:"ذخیره فایل",save_file_desc:"یک فایل ادامه ذخیره کنید تا بعداً در جستجوی مسکن باز شود.",exit_choice_title:"پایان بازدید؟",exit_choice_desc:"پیش از پاک شدن همه چیز، فهرست را ذخیره می‌کنید؟",exit_save:"برای بعد ذخیره کن و پایان بده",exit_save_desc:"فایل ادامه را ذخیره کنید. پس از ذخیره، اطلاعات بازدید پاک می‌شود.",exit_clear:"بدون ذخیره پاک کن",exit_clear_desc:"فهرست، وضعیت‌ها، یادداشت‌ها و داده‌های موقت پاک می‌شوند.",open_saved_file:"باز کردن فایل ذخیره‌شده",file_saved:"فایل ذخیره شد.",file_import_success:"فهرست ذخیره‌شده باز شد.",file_import_invalid:"فایل خوانده نشد."},
+ so:{save_choice_title:"Sidee ayaad u kaydinaysaa?",save_choice_desc:"Dooro sida aad liiskaaga uga qaadanayso kombiyuutarkan.",save_qr:"Telefoonka ugu dir QR",save_qr_desc:"Telefoonka ku sawir. Liiskaaga iyo xaaladaha ayaa wareegaya.",save_file:"Kaydi fayl",save_file_desc:"Kaydi fayl aad mar dambe uga sii wadi karto Raadinta guri.",exit_choice_title:"Dhammee booqashada?",exit_choice_desc:"Ma rabtaa inaad liiska kaydiso ka hor inta wax walba la tirtirin?",exit_save:"Kaydi mar dambe oo dhammee",exit_save_desc:"Kaydi faylka. Marka uu kaydsamo booqashada waa la nadiifinayaa.",exit_clear:"Tirtir adigoon kaydin",exit_clear_desc:"Liiska, xaaladaha, qoraallada iyo xogta ku meel gaarka ah waa la tirtirayaa.",open_saved_file:"Fur fayl kaydsan",file_saved:"Faylka waa la kaydiyey.",file_import_success:"Liiska kaydsan waa la furay.",file_import_invalid:"Faylka lama akhrin karin."},
+ ti:{save_choice_title:"ከመይ ክትዕቅብ ትደሊ?",save_choice_desc:"ዝርዝርካ ካብዚ ኮምፒተር ከመይ ክትወስዶ ከም እትደሊ ምረጽ።",save_qr:"ብQR ናብ ሞባይል",save_qr_desc:"ብሞባይል ስካን ግበር። ዝርዝርካን ኩነታትካን ይሰጋገሩ።",save_file:"ፋይል ዓቅብ",save_file_desc:"ድሕሪ ግዜ ኣብ Sök bostad ክትከፍቶ እትኽእል ፋይል ዓቅብ።",exit_choice_title:"ምብጻሕ ክትውድእ?",exit_choice_desc:"ኩሉ ቅድሚ ምድምሳሱ ዝርዝርካ ክትዕቅብ ትደሊ?",exit_save:"ዓቅብ እሞ ምብጻሕ ወድእ",exit_save_desc:"ፋይል ዓቅብ። ምስ ተዓቀበ ምብጻሕ ይድምሰስ።",exit_clear:"ከይዓቀብካ ደምስስ",exit_clear_desc:"ዝርዝር፣ ኩነታት፣ መዘኻኸሪን ግዝያዊ ሓበሬታን ይድምሰስ።",open_saved_file:"ዝተዓቀበ ፋይል ክፈት",file_saved:"ፋይሉ ተዓቂቡ።",file_import_success:"ዝተዓቀበ ዝርዝር ተኸፊቱ።",file_import_invalid:"ፋይሉ ክንበብ ኣይከኣለን።"},
+ rw:{save_choice_title:"Ushaka kubika ute?",save_choice_desc:"Hitamo uko ushaka kujyana urutonde rwawe kuri iyi mudasobwa.",save_qr:"Kuri telefone ukoresheje QR",save_qr_desc:"Sikana na telefone. Urutonde n’imimerere birimuka.",save_file:"Bika dosiye",save_file_desc:"Bika dosiye ushobora gufungura nyuma muri Sök bostad.",exit_choice_title:"Soza gusura?",exit_choice_desc:"Ushaka kubika urutonde mbere yo gusiba byose?",exit_save:"Bika kugira ngo ukomeze nyuma, hanyuma usoze",exit_save_desc:"Bika dosiye. Iyo ibitswe, amakuru y’uru ruzinduko arasibwa.",exit_clear:"Siba utabanje kubika",exit_clear_desc:"Urutonde, imimerere, inyandiko n’amakuru y’igihe gito arasibwa.",open_saved_file:"Fungura dosiye yabitswe",file_saved:"Dosiye yabitswe.",file_import_success:"Urutonde rwabitswe rwafunguwe.",file_import_invalid:"Dosiye ntiyasomwe."},
+ sw:{save_choice_title:"Unataka kuhifadhi vipi?",save_choice_desc:"Chagua jinsi ya kuchukua orodha yako kutoka kwenye kompyuta hii.",save_qr:"Kwa simu kwa QR",save_qr_desc:"Skan kwa simu. Orodha na hali zako zitahamia.",save_file:"Hifadhi faili",save_file_desc:"Hifadhi faili ya kuendelea ambayo unaweza kufungua baadaye katika Tafuta makazi.",exit_choice_title:"Maliza ziara?",exit_choice_desc:"Unataka kuhifadhi orodha kabla ya kufuta kila kitu?",exit_save:"Hifadhi kwa baadaye na umalize",exit_save_desc:"Hifadhi faili ya kuendelea. Baada ya kuhifadhiwa, ziara itafutwa.",exit_clear:"Futa bila kuhifadhi",exit_clear_desc:"Orodha, hali, maelezo na data ya muda vitafutwa.",open_saved_file:"Fungua faili iliyohifadhiwa",file_saved:"Faili imehifadhiwa.",file_import_success:"Orodha yako iliyohifadhiwa imefunguliwa.",file_import_invalid:"Faili haikuweza kusomwa."}
+};
+Object.keys(CHOICE_I18N).forEach(function(code){ EXTRA_I18N[code]=Object.assign(EXTRA_I18N[code]||{},CHOICE_I18N[code]); });
+
 function t(k){ var x=(EXTRA_I18N[state.lang]||{}); if(x[k]!==undefined)return x[k]; var xs=EXTRA_I18N.sv||{}; var d=I18N[state.lang]||I18N.sv; return d[k]!==undefined?d[k]:(xs[k]!==undefined?xs[k]:(I18N.sv[k]||k)); }
 function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m];}); }
 
@@ -674,6 +767,31 @@ function saveState(){
   var q=document.getElementById("qrArea"),b=document.getElementById("qrCode");
   if(q)q.classList.add("hidden");
   if(b)b.innerHTML="";
+}
+
+function endVisitAndClear(){
+  try{
+    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(LANG_CHOSEN_KEY);
+  }catch(e){}
+  state.lang="sv";
+  state.tab="start";
+  state.filter="__CHOOSE__";
+  state.type="__ALL__";
+  state.query="";
+  state.onlyNot=false;
+  state.list={};
+  try{ history.replaceState(null,"",window.location.pathname+window.location.search); }catch(e){}
+  var search=document.getElementById("searchInput"); if(search)search.value="";
+  var backup=document.getElementById("backupInput"); if(backup)backup.value="";
+  var adv=document.getElementById("advancedFilters"); if(adv)adv.open=false;
+  buildLangSelect();
+  applyLang();
+  renderResults();
+  updateListCount();
+  switchTab("start");
+  buildLangOverlay();
+  document.getElementById("langOverlay").classList.remove("hidden");
 }
 
 function companyId(c){ return c.custom ? "custom:"+c.name : c.name; }
@@ -700,12 +818,13 @@ function showToast(msg){
   setTimeout(function(){ el.classList.remove("opacity-0","translate-y-2"); },10);
   setTimeout(function(){ el.classList.add("opacity-0","translate-y-2"); setTimeout(function(){el.remove();},300); },2600);
 }
-function customConfirm(message, onOk){
+function customConfirm(message, onOk, options){
+  options=options||{};
   var modal=document.getElementById("confirmModal");
-  document.getElementById("modalTitle").textContent=t("clear");
+  document.getElementById("modalTitle").textContent=options.title||t("clear");
   document.getElementById("modalMessage").textContent=message;
-  document.getElementById("modalCancel").textContent=t("cancel");
-  document.getElementById("modalConfirm").textContent=t("confirm");
+  document.getElementById("modalCancel").textContent=options.cancelText||t("cancel");
+  document.getElementById("modalConfirm").textContent=options.confirmText||t("confirm");
   modal.classList.remove("hidden");
   function cleanup(){ modal.classList.add("hidden"); document.getElementById("modalConfirm").onclick=null; document.getElementById("modalCancel").onclick=null; }
   document.getElementById("modalConfirm").onclick=function(){ onOk(); cleanup(); };
@@ -796,6 +915,9 @@ function applyLang(){
   document.getElementById("qrScanText").textContent=t("qr_scan");
   document.getElementById("btnCopyMobileLink").textContent=t("qr_copy");
   document.getElementById("qrPrivacy").textContent=t("qr_privacy");
+  document.getElementById("saveVisitText").textContent=t("session_save");
+  document.getElementById("endVisitText").textContent=t("session_exit");
+  document.getElementById("sessionHint").textContent=t("session_hint");
   document.getElementById("reviewedFooter").textContent=t("reviewed");
   document.getElementById("addOwnToggle").textContent="+ "+t("add_own");
   document.getElementById("lblOwnName").textContent=t("add_own_name");
@@ -805,6 +927,7 @@ function applyLang(){
   document.getElementById("backupTitleText").textContent=t("backup_title");
   document.getElementById("backupDescText").textContent=t("backup_desc");
   document.getElementById("btnExport").textContent=t("btn_export");
+  document.getElementById("btnImportFile").textContent=t("open_saved_file");
   document.getElementById("btnImport").textContent=t("btn_import");
   document.getElementById("backupInput").placeholder=t("import_placeholder");
   renderSteps();
@@ -1222,6 +1345,68 @@ function importBackup(){
     } else showToast(t("import_invalid"));
   }catch(e){ showToast(t("import_invalid")); }
 }
+function downloadSavedFile(){
+  var payload={v:1,app:"sok-bostad",lang:state.lang,list:state.list,savedAt:new Date().toISOString()};
+  var blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json;charset=utf-8"});
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement("a");
+  var d=new Date(), yyyy=d.getFullYear(), mm=String(d.getMonth()+1).padStart(2,"0"), dd=String(d.getDate()).padStart(2,"0");
+  a.href=url; a.download="sok-bostad-lista-"+yyyy+"-"+mm+"-"+dd+".sokbostad";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){URL.revokeObjectURL(url);},1500);
+  return true;
+}
+function importSavedFile(file){
+  if(!file)return;
+  var reader=new FileReader();
+  reader.onload=function(){
+    try{
+      var parsed=JSON.parse(String(reader.result||""));
+      if(!parsed || !parsed.list) throw new Error("invalid");
+      state.list=parsed.list;
+      if(parsed.lang && I18N[parsed.lang]) state.lang=parsed.lang;
+      saveState(); buildLangSelect(); applyLang(); renderList(); renderResults(); updateListCount(); switchTab("list");
+      showToast(t("file_import_success"));
+    }catch(e){ showToast(t("file_import_invalid")); }
+  };
+  reader.onerror=function(){ showToast(t("file_import_invalid")); };
+  reader.readAsText(file,"utf-8");
+}
+function fillSaveChoiceTexts(){
+  document.getElementById("saveChoiceTitle").textContent=t("save_choice_title");
+  document.getElementById("saveChoiceDesc").textContent=t("save_choice_desc");
+  document.getElementById("saveChoiceQrTitle").textContent=t("save_qr");
+  document.getElementById("saveChoiceQrDesc").textContent=t("save_qr_desc");
+  document.getElementById("saveChoiceFileTitle").textContent=t("save_file");
+  document.getElementById("saveChoiceFileDesc").textContent=t("save_file_desc");
+  document.getElementById("saveChoiceCancel").textContent=t("cancel");
+}
+function fillExitChoiceTexts(){
+  document.getElementById("exitChoiceTitle").textContent=t("exit_choice_title");
+  document.getElementById("exitChoiceDesc").textContent=t("exit_choice_desc");
+  document.getElementById("exitChoiceSaveTitle").textContent=t("exit_save");
+  document.getElementById("exitChoiceSaveDesc").textContent=t("exit_save_desc");
+  document.getElementById("exitChoiceClearTitle").textContent=t("exit_clear");
+  document.getElementById("exitChoiceClearDesc").textContent=t("exit_clear_desc");
+  document.getElementById("exitChoiceCancel").textContent=t("cancel");
+}
+function openSaveChoice(){ fillSaveChoiceTexts(); document.getElementById("saveChoiceModal").classList.remove("hidden"); }
+function closeSaveChoice(){ document.getElementById("saveChoiceModal").classList.add("hidden"); }
+function openExitChoice(){ fillExitChoiceTexts(); document.getElementById("exitChoiceModal").classList.remove("hidden"); }
+function closeExitChoice(){ document.getElementById("exitChoiceModal").classList.add("hidden"); }
+function saveChoiceToQr(){
+  closeSaveChoice();
+  switchTab("list");
+  renderQr();
+  setTimeout(function(){ var el=document.getElementById("qrArea"); if(el)el.scrollIntoView({behavior:"smooth",block:"center"}); },60);
+}
+function saveChoiceToFile(){
+  downloadSavedFile(); closeSaveChoice(); showToast(t("file_saved"));
+}
+function saveFileThenEnd(){
+  downloadSavedFile(); closeExitChoice();
+  setTimeout(endVisitAndClear,180);
+}
 
 function transferPayload(){
   return {v:1,lang:state.lang,list:state.list};
@@ -1297,6 +1482,18 @@ function init(){
   document.getElementById("btnImport").onclick=importBackup;
   document.getElementById("btnShowQr").onclick=function(){ renderQr(); };
   document.getElementById("btnCopyMobileLink").onclick=function(){ copyText(mobileTransferUrl()).then(function(){showToast(t("copy_success"));}).catch(function(){showToast(t("copy_failed"));}); };
+  document.getElementById("btnSaveVisit").onclick=openSaveChoice;
+  document.getElementById("btnEndVisit").onclick=openExitChoice;
+  document.getElementById("saveChoiceQr").onclick=saveChoiceToQr;
+  document.getElementById("saveChoiceFile").onclick=saveChoiceToFile;
+  document.getElementById("saveChoiceCancel").onclick=closeSaveChoice;
+  document.getElementById("exitChoiceSave").onclick=saveFileThenEnd;
+  document.getElementById("exitChoiceClear").onclick=function(){ closeExitChoice(); endVisitAndClear(); };
+  document.getElementById("exitChoiceCancel").onclick=closeExitChoice;
+  document.getElementById("saveChoiceModal").onclick=function(e){ if(e.target===this)closeSaveChoice(); };
+  document.getElementById("exitChoiceModal").onclick=function(e){ if(e.target===this)closeExitChoice(); };
+  document.getElementById("btnImportFile").onclick=function(){ document.getElementById("savedFileInput").click(); };
+  document.getElementById("savedFileInput").onchange=function(){ var f=this.files&&this.files[0]; importSavedFile(f); this.value=""; };
   var stb=document.getElementById("scrollTopBtn");
   window.addEventListener("scroll",function(){
     var y=document.documentElement.scrollTop||document.body.scrollTop;
