@@ -1,0 +1,555 @@
+[
+  {
+    "name": "AB Bostäder i Lidköping",
+    "url": "https://www.bostaderlidkoping.se/",
+    "orter": [
+      "Lidköping"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Alebyggen",
+    "url": "https://www.alebyggen.se/",
+    "orter": [
+      "Ale"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Alingsåshem",
+    "url": "https://www.alingsashem.se/",
+    "orter": [
+      "Alingsås"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Ante Fastigheter",
+    "url": "https://antefastigheter.se/",
+    "orter": [
+      "Alingsås"
+    ]
+  },
+  {
+    "name": "Arkblad Fastigheter",
+    "url": "https://www.arkbladfastigheter.se/",
+    "orter": [
+      "Alingsås"
+    ]
+  },
+  {
+    "name": "Balder",
+    "url": "https://www.balder.se/",
+    "orter": [
+      "Alingsås",
+      "Floda",
+      "Lerum"
+    ]
+  },
+  {
+    "name": "Bengtsforshus",
+    "url": "https://www.bengtsforshus.se/",
+    "orter": [
+      "Bengtsfors"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Blank & Söner AB",
+    "url": "https://www.blanksoner.se/",
+    "orter": [
+      "Falköping",
+      "Skövde",
+      "Skara",
+      "Lidköping"
+    ]
+  },
+  {
+    "name": "Bofast",
+    "url": "https://www.bofast.se/",
+    "orter": [
+      "Svenljunga",
+      "Tranemo"
+    ]
+  },
+  {
+    "name": "Bollebo",
+    "url": "https://www.bollebo.se/",
+    "orter": [
+      "Bollebygd"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Boplats",
+    "url": "https://boplats.se",
+    "orter": [
+      "Göteborg",
+      "Ale",
+      "Alingsås",
+      "Kungälv",
+      "Lerum",
+      "Partille",
+      "Mölndal"
+    ],
+    "note": "formedling"
+  },
+  {
+    "name": "Bostäder i Borås",
+    "url": "https://www.bostaderiboras.se/",
+    "orter": [
+      "Borås"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "CA Fastigheter",
+    "url": "https://www.cafastigheter.se/",
+    "orter": [
+      "Borås"
+    ]
+  },
+  {
+    "name": "Cederqvist Fastigheter AB",
+    "url": "https://www.cederqvistfastigheter.se/",
+    "orter": [
+      "Tidaholm",
+      "Falköping",
+      "Töreboda"
+    ]
+  },
+  {
+    "name": "Centrumbostäder i Skara",
+    "url": "https://www.centrumbostader.se/",
+    "orter": [
+      "Skara"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Derome Förvaltning",
+    "url": "https://www.deromeforvaltning.se/",
+    "orter": [
+      "Göteborg",
+      "Mölndal",
+      "Mölnlycke"
+    ]
+  },
+  {
+    "name": "Edethus",
+    "url": "https://www.edethus.se/",
+    "orter": [
+      "Lilla Edet"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Edshus (Dals-Ed)",
+    "url": "https://www.edshus.se/",
+    "orter": [
+      "Ed"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Eidar (Trollhättans Bostadsbolag)",
+    "url": "https://www.eidar.se/",
+    "orter": [
+      "Trollhättan"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Ell-K Invest AB",
+    "url": "https://www.ell-kinvest.se/",
+    "orter": [
+      "Falköping"
+    ]
+  },
+  {
+    "name": "Essungabostäder",
+    "url": "https://www.essungabostader.se/",
+    "orter": [
+      "Essunga"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Fortinova",
+    "url": "https://www.fortinova.se/",
+    "orter": [
+      "Borås",
+      "Göteborg",
+      "Götene",
+      "Lilla Edet",
+      "Uddevalla"
+    ]
+  },
+  {
+    "name": "Fristadsbostäder",
+    "url": "https://fribo.nu/",
+    "orter": [
+      "Borås"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Förbo",
+    "url": "https://minasidor.foerbo.se/",
+    "orter": [
+      "Lerum",
+      "Floda",
+      "Gråbo",
+      "Stenkullen",
+      "Tollered",
+      "Mölndal",
+      "Härryda",
+      "Kungälv"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Gullspångsbostäder",
+    "url": "https://www.gullspangsbostader.se/",
+    "orter": [
+      "Gullspång"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Götenebostäder",
+    "url": "https://www.gotenebostader.se/",
+    "orter": [
+      "Götene"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Herbo",
+    "url": "https://herbo.se/",
+    "orter": [
+      "Herrljunga"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Hyresbo",
+    "url": "https://hyresbo.se/",
+    "orter": [
+      "Falköping"
+    ]
+  },
+  {
+    "name": "Karlsborgsbostäder",
+    "url": "https://www.karlsborgsbostader.se/",
+    "orter": [
+      "Karlsborg"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Knallehem",
+    "url": "https://www.knallehem.se/intresseanmalan",
+    "orter": [
+      "Mark"
+    ]
+  },
+  {
+    "name": "Kungälvsbostäder",
+    "url": "https://www.kungalvsbostader.se/",
+    "orter": [
+      "Kungälv"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Kvarteret Lyckebo",
+    "url": "https://kvlyckebo.se",
+    "orter": [
+      "Bollebygd"
+    ]
+  },
+  {
+    "name": "Larsson Fastigheter",
+    "url": "https://www.larssonsfastigheter.se/",
+    "orter": [
+      "Borås",
+      "Sandared",
+      "Ulricehamn"
+    ]
+  },
+  {
+    "name": "Lysekilsbostäder",
+    "url": "https://www.lysekilsbostader.se/",
+    "orter": [
+      "Lysekil"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Mariehus",
+    "url": "https://www.mariehus.se/",
+    "orter": [
+      "Mariestad"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Marks Bostads AB",
+    "url": "https://www.marksbostadsab.se/",
+    "orter": [
+      "Mark"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Mellerudsbostäder",
+    "url": "https://www.mellbo.se/",
+    "orter": [
+      "Mellerud"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Munkbo",
+    "url": "https://www.munkbo.se/",
+    "orter": [
+      "Munkedal"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Mölndalsbostäder",
+    "url": "https://www.molndalsbostader.se/",
+    "orter": [
+      "Mölndal",
+      "Kållered"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Nefast",
+    "url": "https://nefast.se/bostader/",
+    "orter": [
+      "Alingsås"
+    ]
+  },
+  {
+    "name": "Olofssons Fastigheter",
+    "url": "https://www.olofssonfastigheter.se/",
+    "orter": [
+      "Borås"
+    ]
+  },
+  {
+    "name": "Orustbostäder",
+    "url": "https://www.orustbostader.se/",
+    "orter": [
+      "Orust"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Partillebo",
+    "url": "https://www.partillebo.se/",
+    "orter": [
+      "Partille"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Paxon AB",
+    "url": "https://www.paxon.se/",
+    "orter": [
+      "Vårgårda",
+      "Herrljunga"
+    ]
+  },
+  {
+    "name": "PP Fastigheter",
+    "url": "https://www.ppfastigheter.se/",
+    "orter": [
+      "Härryda",
+      "Landvetter",
+      "Hindås"
+    ]
+  },
+  {
+    "name": "Skövdebostäder",
+    "url": "https://www.skovdebostader.se/",
+    "orter": [
+      "Skövde"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Sotenäsbostäder",
+    "url": "https://www.sotenasbostader.se/",
+    "orter": [
+      "Sotenäs"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Strand AB",
+    "url": "https://www.strandab.se/",
+    "orter": [
+      "Bollebygd",
+      "Rävlanda",
+      "Hindås",
+      "Mölnlycke"
+    ]
+  },
+  {
+    "name": "Strömstadsbyggen",
+    "url": "https://www.stromstadsbyggen.se/",
+    "orter": [
+      "Strömstad"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Stubo",
+    "url": "https://stubo.se/",
+    "orter": [
+      "Ulricehamn"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Svenbo",
+    "url": "https://www.svenbo.com/",
+    "orter": [
+      "Svenljunga"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Tanumsbostäder",
+    "url": "https://www.tanumsbostader.se/",
+    "orter": [
+      "Tanum"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Tibrobyggen",
+    "url": "https://tibrobyggen.se/",
+    "orter": [
+      "Tibro"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Tidaholms Bostads AB",
+    "url": "https://tbab.se/",
+    "orter": [
+      "Tidaholm"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Tranemobostäder",
+    "url": "https://www.tranemobostader.se/",
+    "orter": [
+      "Tranemo"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Trollängen",
+    "url": "https://www.trollangenbostad.se/",
+    "orter": [
+      "Göteborg",
+      "Vårgårda",
+      "Herrljunga"
+    ]
+  },
+  {
+    "name": "Törebodabostäder",
+    "url": "https://www.torebodabostader.se/",
+    "orter": [
+      "Töreboda"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Uddevallahem",
+    "url": "https://www.uddevallahem.se/",
+    "orter": [
+      "Uddevalla"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Ullsaxen",
+    "url": "https://www.ullsaxen.se/",
+    "orter": [
+      "Borås",
+      "Rydal"
+    ]
+  },
+  {
+    "name": "Valbohem (Färgelanda)",
+    "url": "https://www.valbohem.se/",
+    "orter": [
+      "Färgelanda"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "VaraBostäder",
+    "url": "https://varabostader.se/",
+    "orter": [
+      "Vara"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Visiongruppen",
+    "url": "https://visionsgruppen.se/",
+    "orter": [
+      "Göteborg",
+      "Falköping"
+    ]
+  },
+  {
+    "name": "Viskaforshem",
+    "url": "https://www.viskaforshem.se/",
+    "orter": [
+      "Borås"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Vänersborgsbostäder",
+    "url": "https://www.vanersborgsbostader.se/",
+    "orter": [
+      "Vänersborg"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Vårgårda Bostäder",
+    "url": "https://vargardabostader.se/",
+    "orter": [
+      "Vårgårda"
+    ],
+    "note": "kommunal"
+  },
+  {
+    "name": "Willhem",
+    "url": "https://willhem.se",
+    "orter": [
+      "Göteborg"
+    ]
+  },
+  {
+    "name": "Åmåls Kommunfastigheter",
+    "url": "https://www.amalskommunfastigheter.se/",
+    "orter": [
+      "Åmål"
+    ],
+    "note": "kommunal"
+  }
+]
