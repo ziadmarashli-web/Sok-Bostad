@@ -56,7 +56,7 @@
   },
   {
     "name": "Blank & Söner AB",
-    "url": "https://www.blanksoner.se/",
+    "url": "https://blanksoner.se/",
     "orter": [
       "Falköping",
       "Skövde",
@@ -120,7 +120,7 @@
   },
   {
     "name": "Centrumbostäder i Skara",
-    "url": "https://www.centrumbostader.se/",
+    "url": "https://centrumbostader.se/",
     "orter": [
       "Skara"
     ],
@@ -137,7 +137,7 @@
   },
   {
     "name": "Edethus",
-    "url": "https://www.edethus.se/",
+    "url": "https://edethus.se/",
     "orter": [
       "Lilla Edet"
     ],
@@ -233,6 +233,13 @@
     "note": "kommunal"
   },
   {
+    "name": "HomeQ",
+    "url": "https://www.homeq.se/",
+    "orter": [],
+    "note": "formedling",
+    "nationwide": true
+  },
+  {
     "name": "Hyresbo",
     "url": "https://hyresbo.se/",
     "orter": [
@@ -288,7 +295,7 @@
   },
   {
     "name": "Mariehus",
-    "url": "https://www.mariehus.se/",
+    "url": "https://mariehus.se/",
     "orter": [
       "Mariestad"
     ],
@@ -304,7 +311,7 @@
   },
   {
     "name": "Mellerudsbostäder",
-    "url": "https://www.mellbo.se/",
+    "url": "https://mellbo.se/",
     "orter": [
       "Mellerud"
     ],
@@ -359,7 +366,7 @@
   },
   {
     "name": "Paxon AB",
-    "url": "https://www.paxon.se/",
+    "url": "https://paxon.se/",
     "orter": [
       "Vårgårda",
       "Herrljunga"
@@ -372,6 +379,13 @@
       "Härryda",
       "Landvetter",
       "Hindås"
+    ]
+  },
+  {
+    "name": "Rikshem",
+    "url": "https://minasidor.rikshem.se/ledigt-just-nu",
+    "orter": [
+      "Ale"
     ]
   },
   {
@@ -402,7 +416,7 @@
   },
   {
     "name": "Strömstadsbyggen",
-    "url": "https://www.stromstadsbyggen.se/",
+    "url": "https://stromstadsbyggen.se/",
     "orter": [
       "Strömstad"
     ],
@@ -458,7 +472,7 @@
   },
   {
     "name": "Trollängen",
-    "url": "https://www.trollangenbostad.se/",
+    "url": "https://www.trollangen.se/",
     "orter": [
       "Göteborg",
       "Vårgårda",
@@ -506,6 +520,14 @@
     "note": "kommunal"
   },
   {
+    "name": "Varbergs Bostad",
+    "url": "https://www.varbergsbostad.se/",
+    "orter": [
+      "Varberg"
+    ],
+    "note": "kommunal"
+  },
+  {
     "name": "Visiongruppen",
     "url": "https://visionsgruppen.se/",
     "orter": [
@@ -515,17 +537,9 @@
   },
   {
     "name": "Viskaforshem",
-    "url": "https://www.viskaforshem.se/",
+    "url": "https://viskaforshem.se/",
     "orter": [
       "Borås"
-    ],
-    "note": "kommunal"
-  },
-  {
-    "name": "Vänersborgsbostäder",
-    "url": "https://www.vanersborgsbostader.se/",
-    "orter": [
-      "Vänersborg"
     ],
     "note": "kommunal"
   },
@@ -538,8 +552,16 @@
     "note": "kommunal"
   },
   {
+    "name": "Vänersborgsbostäder",
+    "url": "https://www.vanersborgsbostader.se/",
+    "orter": [
+      "Vänersborg"
+    ],
+    "note": "kommunal"
+  },
+  {
     "name": "Willhem",
-    "url": "https://willhem.se",
+    "url": "https://www.willhem.se/",
     "orter": [
       "Göteborg"
     ]
