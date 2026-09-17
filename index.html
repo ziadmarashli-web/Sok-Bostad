@@ -729,7 +729,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
 
 <script>
 "use strict";
-/* Sök bostad V4.5 – Clean Baseline */
+/* Sök bostad V4.6 – Clean Baseline */
 /* BOLAG_DATA_START */
 var COMPANIES = [{"name":"AB Bostäder i Lidköping","url":"https://www.bostaderlidkoping.se/","orter":["Lidköping"],"note":"kommunal"},{"name":"Alebyggen","url":"https://www.alebyggen.se/","orter":["Ale"],"note":"kommunal"},{"name":"Alingsåshem","url":"https://www.alingsashem.se/","orter":["Alingsås"],"note":"kommunal"},{"name":"Ante Fastigheter","url":"https://antefastigheter.se/","orter":["Alingsås"]},{"name":"Arkblad Fastigheter","url":"https://www.arkbladfastigheter.se/","orter":["Alingsås"]},{"name":"Balder","url":"https://www.balder.se/","orter":["Alingsås","Floda","Lerum"]},{"name":"Bengtsforshus","url":"https://www.bengtsforshus.se/","orter":["Bengtsfors"],"note":"kommunal"},{"name":"Blank & Söner AB","url":"https://blanksoner.se/","orter":["Falköping","Skövde","Skara","Lidköping"]},{"name":"Bofast","url":"https://www.bofast.se/","orter":["Svenljunga","Tranemo"]},{"name":"Bollebo","url":"https://www.bollebo.se/","orter":["Bollebygd"],"note":"kommunal"},{"name":"Boplats","url":"https://boplats.se","orter":["Göteborg","Ale","Alingsås","Kungälv","Lerum","Partille","Mölndal"],"note":"formedling"},{"name":"Bostäder i Borås","url":"https://www.bostaderiboras.se/","orter":["Borås"],"note":"kommunal"},{"name":"CA Fastigheter","url":"https://www.cafastigheter.se/","orter":["Borås"]},{"name":"Cederqvist Fastigheter AB","url":"https://www.cederqvistfastigheter.se/","orter":["Tidaholm","Falköping","Töreboda"]},{"name":"Centrumbostäder i Skara","url":"https://centrumbostader.se/","orter":["Skara"],"note":"kommunal"},{"name":"Derome Förvaltning","url":"https://www.deromeforvaltning.se/","orter":["Göteborg","Mölndal","Mölnlycke"]},{"name":"Edethus","url":"https://edethus.se/","orter":["Lilla Edet"],"note":"kommunal"},{"name":"Edshus (Dals-Ed)","url":"https://www.edshus.se/","orter":["Ed"],"note":"kommunal"},{"name":"Eidar (Trollhättans Bostadsbolag)","url":"https://www.eidar.se/","orter":["Trollhättan"],"note":"kommunal"},{"name":"Ell-K Invest AB","url":"https://www.ell-kinvest.se/","orter":["Falköping"]},{"name":"Essungabostäder","url":"https://www.essungabostader.se/","orter":["Essunga"],"note":"kommunal"},{"name":"Fortinova","url":"https://www.fortinova.se/","orter":["Borås","Göteborg","Götene","Lilla Edet","Uddevalla"]},{"name":"Fristadsbostäder","url":"https://fribo.nu/","orter":["Borås"],"note":"kommunal"},{"name":"Förbo","url":"https://minasidor.foerbo.se/","orter":["Lerum","Floda","Gråbo","Stenkullen","Tollered","Mölndal","Härryda","Kungälv"],"note":"kommunal"},{"name":"Gullspångsbostäder","url":"https://www.gullspangsbostader.se/","orter":["Gullspång"],"note":"kommunal"},{"name":"Götenebostäder","url":"https://www.gotenebostader.se/","orter":["Götene"],"note":"kommunal"},{"name":"Herbo","url":"https://herbo.se/","orter":["Herrljunga"],"note":"kommunal"},{"name":"HomeQ","url":"https://www.homeq.se/","orter":[],"note":"formedling","nationwide":true},{"name":"Hyresbo","url":"https://hyresbo.se/","orter":["Falköping"]},{"name":"Karlsborgsbostäder","url":"https://www.karlsborgsbostader.se/","orter":["Karlsborg"],"note":"kommunal"},{"name":"Knallehem","url":"https://www.knallehem.se/intresseanmalan","orter":["Mark"]},{"name":"Kungälvsbostäder","url":"https://www.kungalvsbostader.se/","orter":["Kungälv"],"note":"kommunal"},{"name":"Kvarteret Lyckebo","url":"https://kvlyckebo.se","orter":["Bollebygd"]},{"name":"Larsson Fastigheter","url":"https://www.larssonsfastigheter.se/","orter":["Borås","Sandared","Ulricehamn"]},{"name":"Lysekilsbostäder","url":"https://www.lysekilsbostader.se/","orter":["Lysekil"],"note":"kommunal"},{"name":"Mariehus","url":"https://mariehus.se/","orter":["Mariestad"],"note":"kommunal"},{"name":"Marks Bostads AB","url":"https://www.marksbostadsab.se/","orter":["Mark"],"note":"kommunal"},{"name":"Mellerudsbostäder","url":"https://mellbo.se/","orter":["Mellerud"],"note":"kommunal"},{"name":"Munkbo","url":"https://www.munkbo.se/","orter":["Munkedal"],"note":"kommunal"},{"name":"Mölndalsbostäder","url":"https://www.molndalsbostader.se/","orter":["Mölndal","Kållered"],"note":"kommunal"},{"name":"Nefast","url":"https://nefast.se/bostader/","orter":["Alingsås"]},{"name":"Olofssons Fastigheter","url":"https://www.olofssonfastigheter.se/","orter":["Borås"]},{"name":"Orustbostäder","url":"https://www.orustbostader.se/","orter":["Orust"],"note":"kommunal"},{"name":"Partillebo","url":"https://www.partillebo.se/","orter":["Partille"],"note":"kommunal"},{"name":"Paxon AB","url":"https://paxon.se/","orter":["Vårgårda","Herrljunga"]},{"name":"PP Fastigheter","url":"https://www.ppfastigheter.se/","orter":["Härryda","Landvetter","Hindås"]},{"name":"Rikshem","url":"https://minasidor.rikshem.se/ledigt-just-nu","orter":["Ale"]},{"name":"Skövdebostäder","url":"https://www.skovdebostader.se/","orter":["Skövde"],"note":"kommunal"},{"name":"Sotenäsbostäder","url":"https://www.sotenasbostader.se/","orter":["Sotenäs"],"note":"kommunal"},{"name":"Strand AB","url":"https://www.strandab.se/","orter":["Bollebygd","Rävlanda","Hindås","Mölnlycke"]},{"name":"Strömstadsbyggen","url":"https://stromstadsbyggen.se/","orter":["Strömstad"],"note":"kommunal"},{"name":"Stubo","url":"https://stubo.se/","orter":["Ulricehamn"],"note":"kommunal"},{"name":"Svenbo","url":"https://www.svenbo.com/","orter":["Svenljunga"],"note":"kommunal"},{"name":"Tanumsbostäder","url":"https://www.tanumsbostader.se/","orter":["Tanum"],"note":"kommunal"},{"name":"Tibrobyggen","url":"https://tibrobyggen.se/","orter":["Tibro"],"note":"kommunal"},{"name":"Tidaholms Bostads AB","url":"https://tbab.se/","orter":["Tidaholm"],"note":"kommunal"},{"name":"Tranemobostäder","url":"https://www.tranemobostader.se/","orter":["Tranemo"],"note":"kommunal"},{"name":"Trollängen","url":"https://www.trollangen.se/","orter":["Göteborg","Vårgårda","Herrljunga"]},{"name":"Törebodabostäder","url":"https://www.torebodabostader.se/","orter":["Töreboda"],"note":"kommunal"},{"name":"Uddevallahem","url":"https://www.uddevallahem.se/","orter":["Uddevalla"],"note":"kommunal"},{"name":"Ullsaxen","url":"https://www.ullsaxen.se/","orter":["Borås","Rydal"]},{"name":"Valbohem (Färgelanda)","url":"https://www.valbohem.se/","orter":["Färgelanda"],"note":"kommunal"},{"name":"VaraBostäder","url":"https://varabostader.se/","orter":["Vara"],"note":"kommunal"},{"name":"Varbergs Bostad","url":"https://www.varbergsbostad.se/","orter":["Varberg"],"note":"kommunal"},{"name":"Visiongruppen","url":"https://visionsgruppen.se/","orter":["Göteborg","Falköping"]},{"name":"Viskaforshem","url":"https://viskaforshem.se/","orter":["Borås"],"note":"kommunal"},{"name":"Vårgårda Bostäder","url":"https://vargardabostader.se/","orter":["Vårgårda"],"note":"kommunal"},{"name":"Vänersborgsbostäder","url":"https://www.vanersborgsbostader.se/","orter":["Vänersborg"],"note":"kommunal"},{"name":"Willhem","url":"https://www.willhem.se/","orter":["Göteborg"]},{"name":"Åmåls Kommunfastigheter","url":"https://www.amalskommunfastigheter.se/","orter":["Åmål"],"note":"kommunal"}];
 /* BOLAG_DATA_END */
@@ -3777,6 +3777,210 @@ function init(){
     setTimeout(v45ConsumeRemoteTransfer,0);
   };
   /* ===== end V4.5 SHORT ENCRYPTED QR TRANSFER ===== */
+
+
+  /* ===== V4.6 DIRECT COMPRESSED QR – NO SERVER ===== */
+  var V46_I18N={"sv":{"local_qr_preparing":"Skapar QR-kod…","local_qr_ready":"Skanna QR-koden med mobilen. Din lista, status och datum följer med.","local_qr_privacy":"Överföringen sker direkt via QR-koden. Inget sparas på någon server.","local_qr_notes":"Anteckningar följer inte med via QR. Använd Spara fil om du vill behålla anteckningar.","local_qr_too_large":"Listan är för stor för en säker QR-kod. Spara en fil i stället.","local_restore_success":"Listan är återställd på den här enheten.","local_restore_failed":"QR-länken kunde inte läsas. Skapa en ny QR-kod eller använd en sparad fil."},"en":{"local_qr_preparing":"Creating QR code…","local_qr_ready":"Scan the QR code with your phone. Your list, status and dates will follow.","local_qr_privacy":"The transfer happens directly through the QR code. Nothing is stored on a server.","local_qr_notes":"Notes are not included in QR transfer. Use Save file if you want to keep notes.","local_qr_too_large":"The list is too large for a reliable QR code. Save a file instead.","local_restore_success":"The list has been restored on this device.","local_restore_failed":"The QR link could not be read. Create a new QR code or use a saved file."},"ar":{"local_qr_preparing":"جارٍ إنشاء رمز QR…","local_qr_ready":"امسح رمز QR بالهاتف. ستنتقل قائمتك والحالة والتواريخ.","local_qr_privacy":"يتم النقل مباشرة عبر رمز QR. لا يتم حفظ شيء على أي خادم.","local_qr_notes":"الملاحظات لا تنتقل عبر QR. استخدم حفظ ملف إذا أردت الاحتفاظ بالملاحظات.","local_qr_too_large":"القائمة كبيرة جدًا لرمز QR موثوق. احفظ ملفًا بدلًا من ذلك.","local_restore_success":"تمت استعادة القائمة على هذا الجهاز.","local_restore_failed":"تعذر قراءة رابط QR. أنشئ رمزًا جديدًا أو استخدم ملفًا محفوظًا."},"uk":{"local_qr_preparing":"Створення QR-коду…","local_qr_ready":"Відскануйте QR-код телефоном. Список, статуси й дати буде перенесено.","local_qr_privacy":"Передача відбувається безпосередньо через QR-код. На сервері нічого не зберігається.","local_qr_notes":"Нотатки не передаються через QR. Використайте Зберегти файл, щоб зберегти нотатки.","local_qr_too_large":"Список завеликий для надійного QR-коду. Збережіть файл.","local_restore_success":"Список відновлено на цьому пристрої.","local_restore_failed":"Не вдалося прочитати QR-посилання. Створіть новий QR-код або використайте файл."},"fa":{"local_qr_preparing":"در حال ساخت QR…","local_qr_ready":"QR را با تلفن اسکن کنید. فهرست، وضعیت و تاریخ‌ها منتقل می‌شوند.","local_qr_privacy":"انتقال مستقیماً از طریق QR انجام می‌شود. چیزی روی سرور ذخیره نمی‌شود.","local_qr_notes":"یادداشت‌ها از طریق QR منتقل نمی‌شوند. برای نگه‌داشتن یادداشت‌ها فایل ذخیره کنید.","local_qr_too_large":"فهرست برای QR مطمئن خیلی بزرگ است. فایل ذخیره کنید.","local_restore_success":"فهرست روی این دستگاه بازیابی شد.","local_restore_failed":"لینک QR خوانده نشد. QR جدید بسازید یا از فایل ذخیره‌شده استفاده کنید."},"so":{"local_qr_preparing":"Waxaa la samaynayaa QR…","local_qr_ready":"QR-ka ku sawir taleefanka. Liiska, xaaladaha iyo taariikhaha way raacayaan.","local_qr_privacy":"Wareejintu si toos ah ayay uga dhacdaa QR-ka. Waxba server laguma kaydiyo.","local_qr_notes":"Qoraalladu QR kuma raacaan. Isticmaal Kaydi fayl si aad qoraallada u haysato.","local_qr_too_large":"Liisku aad buu ugu weyn yahay QR lagu kalsoonaan karo. Fayl kaydi.","local_restore_success":"Liiska ayaa lagu soo celiyey qalabkan.","local_restore_failed":"Xiriirka QR lama akhriyi karin. Samee QR cusub ama isticmaal fayl kaydsan."},"ti":{"local_qr_preparing":"QR ይፍጠር ኣሎ…","local_qr_ready":"QR ብሞባይል ስካን ግበሮ። ዝርዝር፣ ስታተስን ዕለታትን ይስዕቡ።","local_qr_privacy":"ምስግጋሩ ብቐጥታ ብQR ይካየድ። ኣብ ሰርቨር ዝቕመጥ የለን።","local_qr_notes":"ማስታወሻታት ብQR ኣይስዕቡን። ንምዕቃብ ፋይል ኣቐምጥ።","local_qr_too_large":"ዝርዝሩ ንውሑስ QR ብዙሕ እዩ። ፋይል ኣቐምጥ።","local_restore_success":"ዝርዝሩ ኣብዚ መሳርሒ ተመሊሱ።","local_restore_failed":"QR ሊንክ ክንበብ ኣይከኣለን። ሓድሽ QR ፍጠር ወይ ፋይል ተጠቐም።"},"rw":{"local_qr_preparing":"Gukora QR…","local_qr_ready":"Sikana QR na telefone. Urutonde, status n'amatariki bizajyana.","local_qr_privacy":"Iyoherezwa rikorwa ako kanya muri QR. Nta kintu kibikwa kuri seriveri.","local_qr_notes":"Inyandiko ntizijyana na QR. Koresha Bika dosiye niba ushaka kuzigumana.","local_qr_too_large":"Urutonde ni runini cyane kuri QR yizewe. Bika dosiye.","local_restore_success":"Urutonde rwagaruwe kuri iki gikoresho.","local_restore_failed":"Ihuza rya QR ntiryashoboye gusomwa. Kora QR nshya cyangwa ukoreshe dosiye."},"sw":{"local_qr_preparing":"Inatengeneza QR…","local_qr_ready":"Changanua QR kwa simu. Orodha, hali na tarehe zitahamishwa.","local_qr_privacy":"Uhamisho unafanyika moja kwa moja kupitia QR. Hakuna kinachohifadhiwa kwenye seva.","local_qr_notes":"Maelezo hayahamishwi kwa QR. Tumia Hifadhi faili ikiwa unataka kuhifadhi maelezo.","local_qr_too_large":"Orodha ni kubwa sana kwa QR ya kuaminika. Hifadhi faili.","local_restore_success":"Orodha imerejeshwa kwenye kifaa hiki.","local_restore_failed":"Kiungo cha QR hakikuweza kusomwa. Tengeneza QR mpya au tumia faili."}};
+  Object.keys(V46_I18N).forEach(function(code){
+    REG_I18N[code]=Object.assign(REG_I18N[code]||{},V46_I18N[code]);
+    EXTRA_I18N[code]=Object.assign(EXTRA_I18N[code]||{},V46_I18N[code]);
+  });
+
+  var v46CurrentLink="";
+  var V46_MAX_QR_URL=2200;
+
+  function v46BytesToB64u(bytes){
+    var bin="",chunk=0x8000;
+    for(var i=0;i<bytes.length;i+=chunk){
+      bin+=String.fromCharCode.apply(null,bytes.subarray(i,Math.min(i+chunk,bytes.length)));
+    }
+    return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+  }
+
+  function v46B64uToBytes(s){
+    s=String(s||"").replace(/-/g,"+").replace(/_/g,"/");
+    while(s.length%4)s+="=";
+    var bin=atob(s),out=new Uint8Array(bin.length);
+    for(var i=0;i<bin.length;i++)out[i]=bin.charCodeAt(i);
+    return out;
+  }
+
+  function v46QrPayloadNoNotes(){
+    var p=v42CompactQrPayload();
+    /* QR is for list/status/date transfer. Notes stay in the full save file. */
+    p.a=(p.a||[]).map(function(row){
+      return Array.isArray(row)?row.slice(0,3):row;
+    });
+    return p;
+  }
+
+  async function v46Compress(bytes){
+    if(typeof CompressionStream==="undefined")return null;
+    var cs=new CompressionStream("gzip");
+    var writer=cs.writable.getWriter();
+    await writer.write(bytes);
+    await writer.close();
+    return new Uint8Array(await new Response(cs.readable).arrayBuffer());
+  }
+
+  async function v46Decompress(bytes){
+    if(typeof DecompressionStream==="undefined")throw new Error("gzip unsupported");
+    var ds=new DecompressionStream("gzip");
+    var writer=ds.writable.getWriter();
+    await writer.write(bytes);
+    await writer.close();
+    return new Uint8Array(await new Response(ds.readable).arrayBuffer());
+  }
+
+  async function v46BuildLink(){
+    var raw=new TextEncoder().encode(JSON.stringify(v46QrPayloadNoNotes()));
+    var compressed=await v46Compress(raw);
+    var mode="n",data=raw;
+
+    if(compressed && compressed.length<raw.length){
+      mode="g";
+      data=compressed;
+    }
+
+    var base=window.location.origin+window.location.pathname;
+    /* Fragment keeps the transferred list out of server/CDN request logs. */
+    return base+"#q="+mode+"."+v46BytesToB64u(data);
+  }
+
+  function v46ShowFallback(message){
+    var box=document.getElementById("qrCode"),
+        scan=document.getElementById("qrScanText"),
+        copyBtn=document.getElementById("btnCopyMobileLink"),
+        privacy=document.getElementById("qrPrivacy");
+
+    if(scan)scan.classList.add("hidden");
+    if(copyBtn)copyBtn.classList.add("hidden");
+    if(privacy){
+      privacy.textContent=t("local_qr_notes");
+      privacy.classList.remove("hidden");
+    }
+    box.innerHTML='<div class="w-full p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-900 space-y-3">'
+      +'<div>'+esc(message)+'</div>'
+      +'<button type="button" data-v46-save-file class="w-full py-2.5 px-4 bg-white hover:bg-amber-50 border border-amber-300 rounded-xl font-bold text-amber-900">'+esc(t("qr_save_file"))+'</button>'
+      +'</div>';
+    var b=box.querySelector("[data-v46-save-file]");
+    if(b)b.onclick=function(){downloadSavedFile();showToast(t("file_saved"));};
+  }
+
+  async function v46RenderQr(){
+    var area=document.getElementById("qrArea"),
+        box=document.getElementById("qrCode"),
+        scan=document.getElementById("qrScanText"),
+        copyBtn=document.getElementById("btnCopyMobileLink"),
+        privacy=document.getElementById("qrPrivacy");
+
+    area.classList.remove("hidden");
+    box.innerHTML='<div class="w-full p-4 bg-brand-50 border border-brand-100 rounded-xl text-sm text-brand-800">'+esc(t("local_qr_preparing"))+'</div>';
+    if(scan)scan.classList.add("hidden");
+    if(copyBtn)copyBtn.classList.add("hidden");
+    if(privacy){
+      privacy.textContent=t("local_qr_privacy");
+      privacy.classList.remove("hidden");
+    }
+    v46CurrentLink="";
+
+    try{
+      var link=await v46BuildLink();
+      if(link.length>V46_MAX_QR_URL){
+        v46ShowFallback(t("local_qr_too_large"));
+        return;
+      }
+      if(typeof QRCode==="undefined")throw new Error("QRCode unavailable");
+
+      box.innerHTML="";
+      new QRCode(box,{
+        text:link,
+        width:260,
+        height:260,
+        correctLevel:QRCode.CorrectLevel.L
+      });
+
+      var rendered=box.querySelector("canvas,img,table");
+      if(!rendered)throw new Error("QR render failed");
+
+      v46CurrentLink=link;
+      if(scan){
+        scan.textContent=t("local_qr_ready");
+        scan.classList.remove("hidden");
+      }
+      if(copyBtn){
+        copyBtn.textContent=t("remote_copy_link")||t("copy_link");
+        copyBtn.classList.remove("hidden");
+      }
+      if(privacy)privacy.textContent=t("local_qr_privacy")+" "+t("local_qr_notes");
+    }catch(e){
+      console.error("Direct QR failed",e);
+      v46ShowFallback(t("local_qr_too_large"));
+    }
+  }
+
+  async function v46RestoreFromQr(){
+    var hash=window.location.hash||"";
+    var m=hash.match(/^#q=([gn])\.([A-Za-z0-9_-]+)$/);
+    if(!m)return false;
+
+    try{
+      var mode=m[1],bytes=v46B64uToBytes(m[2]);
+      if(mode==="g")bytes=await v46Decompress(bytes);
+
+      var compact=JSON.parse(new TextDecoder().decode(bytes));
+      var payload=v42ExpandQrPayload(compact);
+      if(!payload||!restorePayload(payload))throw new Error("restore failed");
+
+      history.replaceState(null,"",window.location.pathname);
+      buildLangSelect();
+      applyLang();
+      renderResults();
+      updateListCount();
+      switchTab("list");
+      renderList();
+      showToast(t("local_restore_success"));
+      return true;
+    }catch(e){
+      console.error("Direct QR restore failed",e);
+      history.replaceState(null,"",window.location.pathname);
+      showToast(t("local_restore_failed"));
+      return false;
+    }
+  }
+
+  saveChoiceToQr=function(){
+    closeSaveChoice();
+    switchTab("list");
+    var card=document.getElementById("qrTransferCard");
+    if(card)card.classList.remove("hidden");
+    v46RenderQr();
+    setTimeout(function(){
+      var el=document.getElementById("qrArea");
+      if(el)el.scrollIntoView({behavior:"smooth",block:"center"});
+    },60);
+  };
+
+  renderQr=function(){return v46RenderQr();};
+
+  var v46OldInit=init;
+  init=function(){
+    v46OldInit();
+
+    var qrBtn=document.getElementById("btnShowQr");
+    if(qrBtn)qrBtn.onclick=v46RenderQr;
+
+    var copyBtn=document.getElementById("btnCopyMobileLink");
+    if(copyBtn)copyBtn.onclick=function(){
+      if(!v46CurrentLink)return;
+      copyText(v46CurrentLink)
+        .then(function(){showToast(t("copy_success"));})
+        .catch(function(){showToast(t("copy_failed"));});
+    };
+
+    setTimeout(v46RestoreFromQr,0);
+  };
+  /* ===== end V4.6 DIRECT COMPRESSED QR – NO SERVER ===== */
 
 })();
 
