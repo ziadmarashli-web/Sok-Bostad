@@ -729,7 +729,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
 
 <script>
 "use strict";
-/* Sök bostad V4.3 – Clean Baseline */
+/* Sök bostad V4.4 – Clean Baseline */
 /* BOLAG_DATA_START */
 var COMPANIES = [{"name":"AB Bostäder i Lidköping","url":"https://www.bostaderlidkoping.se/","orter":["Lidköping"],"note":"kommunal"},{"name":"Alebyggen","url":"https://www.alebyggen.se/","orter":["Ale"],"note":"kommunal"},{"name":"Alingsåshem","url":"https://www.alingsashem.se/","orter":["Alingsås"],"note":"kommunal"},{"name":"Ante Fastigheter","url":"https://antefastigheter.se/","orter":["Alingsås"]},{"name":"Arkblad Fastigheter","url":"https://www.arkbladfastigheter.se/","orter":["Alingsås"]},{"name":"Balder","url":"https://www.balder.se/","orter":["Alingsås","Floda","Lerum"]},{"name":"Bengtsforshus","url":"https://www.bengtsforshus.se/","orter":["Bengtsfors"],"note":"kommunal"},{"name":"Blank & Söner AB","url":"https://blanksoner.se/","orter":["Falköping","Skövde","Skara","Lidköping"]},{"name":"Bofast","url":"https://www.bofast.se/","orter":["Svenljunga","Tranemo"]},{"name":"Bollebo","url":"https://www.bollebo.se/","orter":["Bollebygd"],"note":"kommunal"},{"name":"Boplats","url":"https://boplats.se","orter":["Göteborg","Ale","Alingsås","Kungälv","Lerum","Partille","Mölndal"],"note":"formedling"},{"name":"Bostäder i Borås","url":"https://www.bostaderiboras.se/","orter":["Borås"],"note":"kommunal"},{"name":"CA Fastigheter","url":"https://www.cafastigheter.se/","orter":["Borås"]},{"name":"Cederqvist Fastigheter AB","url":"https://www.cederqvistfastigheter.se/","orter":["Tidaholm","Falköping","Töreboda"]},{"name":"Centrumbostäder i Skara","url":"https://centrumbostader.se/","orter":["Skara"],"note":"kommunal"},{"name":"Derome Förvaltning","url":"https://www.deromeforvaltning.se/","orter":["Göteborg","Mölndal","Mölnlycke"]},{"name":"Edethus","url":"https://edethus.se/","orter":["Lilla Edet"],"note":"kommunal"},{"name":"Edshus (Dals-Ed)","url":"https://www.edshus.se/","orter":["Ed"],"note":"kommunal"},{"name":"Eidar (Trollhättans Bostadsbolag)","url":"https://www.eidar.se/","orter":["Trollhättan"],"note":"kommunal"},{"name":"Ell-K Invest AB","url":"https://www.ell-kinvest.se/","orter":["Falköping"]},{"name":"Essungabostäder","url":"https://www.essungabostader.se/","orter":["Essunga"],"note":"kommunal"},{"name":"Fortinova","url":"https://www.fortinova.se/","orter":["Borås","Göteborg","Götene","Lilla Edet","Uddevalla"]},{"name":"Fristadsbostäder","url":"https://fribo.nu/","orter":["Borås"],"note":"kommunal"},{"name":"Förbo","url":"https://minasidor.foerbo.se/","orter":["Lerum","Floda","Gråbo","Stenkullen","Tollered","Mölndal","Härryda","Kungälv"],"note":"kommunal"},{"name":"Gullspångsbostäder","url":"https://www.gullspangsbostader.se/","orter":["Gullspång"],"note":"kommunal"},{"name":"Götenebostäder","url":"https://www.gotenebostader.se/","orter":["Götene"],"note":"kommunal"},{"name":"Herbo","url":"https://herbo.se/","orter":["Herrljunga"],"note":"kommunal"},{"name":"HomeQ","url":"https://www.homeq.se/","orter":[],"note":"formedling","nationwide":true},{"name":"Hyresbo","url":"https://hyresbo.se/","orter":["Falköping"]},{"name":"Karlsborgsbostäder","url":"https://www.karlsborgsbostader.se/","orter":["Karlsborg"],"note":"kommunal"},{"name":"Knallehem","url":"https://www.knallehem.se/intresseanmalan","orter":["Mark"]},{"name":"Kungälvsbostäder","url":"https://www.kungalvsbostader.se/","orter":["Kungälv"],"note":"kommunal"},{"name":"Kvarteret Lyckebo","url":"https://kvlyckebo.se","orter":["Bollebygd"]},{"name":"Larsson Fastigheter","url":"https://www.larssonsfastigheter.se/","orter":["Borås","Sandared","Ulricehamn"]},{"name":"Lysekilsbostäder","url":"https://www.lysekilsbostader.se/","orter":["Lysekil"],"note":"kommunal"},{"name":"Mariehus","url":"https://mariehus.se/","orter":["Mariestad"],"note":"kommunal"},{"name":"Marks Bostads AB","url":"https://www.marksbostadsab.se/","orter":["Mark"],"note":"kommunal"},{"name":"Mellerudsbostäder","url":"https://mellbo.se/","orter":["Mellerud"],"note":"kommunal"},{"name":"Munkbo","url":"https://www.munkbo.se/","orter":["Munkedal"],"note":"kommunal"},{"name":"Mölndalsbostäder","url":"https://www.molndalsbostader.se/","orter":["Mölndal","Kållered"],"note":"kommunal"},{"name":"Nefast","url":"https://nefast.se/bostader/","orter":["Alingsås"]},{"name":"Olofssons Fastigheter","url":"https://www.olofssonfastigheter.se/","orter":["Borås"]},{"name":"Orustbostäder","url":"https://www.orustbostader.se/","orter":["Orust"],"note":"kommunal"},{"name":"Partillebo","url":"https://www.partillebo.se/","orter":["Partille"],"note":"kommunal"},{"name":"Paxon AB","url":"https://paxon.se/","orter":["Vårgårda","Herrljunga"]},{"name":"PP Fastigheter","url":"https://www.ppfastigheter.se/","orter":["Härryda","Landvetter","Hindås"]},{"name":"Rikshem","url":"https://minasidor.rikshem.se/ledigt-just-nu","orter":["Ale"]},{"name":"Skövdebostäder","url":"https://www.skovdebostader.se/","orter":["Skövde"],"note":"kommunal"},{"name":"Sotenäsbostäder","url":"https://www.sotenasbostader.se/","orter":["Sotenäs"],"note":"kommunal"},{"name":"Strand AB","url":"https://www.strandab.se/","orter":["Bollebygd","Rävlanda","Hindås","Mölnlycke"]},{"name":"Strömstadsbyggen","url":"https://stromstadsbyggen.se/","orter":["Strömstad"],"note":"kommunal"},{"name":"Stubo","url":"https://stubo.se/","orter":["Ulricehamn"],"note":"kommunal"},{"name":"Svenbo","url":"https://www.svenbo.com/","orter":["Svenljunga"],"note":"kommunal"},{"name":"Tanumsbostäder","url":"https://www.tanumsbostader.se/","orter":["Tanum"],"note":"kommunal"},{"name":"Tibrobyggen","url":"https://tibrobyggen.se/","orter":["Tibro"],"note":"kommunal"},{"name":"Tidaholms Bostads AB","url":"https://tbab.se/","orter":["Tidaholm"],"note":"kommunal"},{"name":"Tranemobostäder","url":"https://www.tranemobostader.se/","orter":["Tranemo"],"note":"kommunal"},{"name":"Trollängen","url":"https://www.trollangen.se/","orter":["Göteborg","Vårgårda","Herrljunga"]},{"name":"Törebodabostäder","url":"https://www.torebodabostader.se/","orter":["Töreboda"],"note":"kommunal"},{"name":"Uddevallahem","url":"https://www.uddevallahem.se/","orter":["Uddevalla"],"note":"kommunal"},{"name":"Ullsaxen","url":"https://www.ullsaxen.se/","orter":["Borås","Rydal"]},{"name":"Valbohem (Färgelanda)","url":"https://www.valbohem.se/","orter":["Färgelanda"],"note":"kommunal"},{"name":"VaraBostäder","url":"https://varabostader.se/","orter":["Vara"],"note":"kommunal"},{"name":"Varbergs Bostad","url":"https://www.varbergsbostad.se/","orter":["Varberg"],"note":"kommunal"},{"name":"Visiongruppen","url":"https://visionsgruppen.se/","orter":["Göteborg","Falköping"]},{"name":"Viskaforshem","url":"https://viskaforshem.se/","orter":["Borås"],"note":"kommunal"},{"name":"Vårgårda Bostäder","url":"https://vargardabostader.se/","orter":["Vårgårda"],"note":"kommunal"},{"name":"Vänersborgsbostäder","url":"https://www.vanersborgsbostader.se/","orter":["Vänersborg"],"note":"kommunal"},{"name":"Willhem","url":"https://www.willhem.se/","orter":["Göteborg"]},{"name":"Åmåls Kommunfastigheter","url":"https://www.amalskommunfastigheter.se/","orter":["Åmål"],"note":"kommunal"}];
 /* BOLAG_DATA_END */
@@ -3453,6 +3453,122 @@ function init(){
   var v43OldInit=init;
   init=function(){v43OldInit();v43Setup();};
   /* ===== end V4.3 ACCESSIBILITY FINISH ===== */
+
+
+  /* ===== V4.4 ROBUST QR TRANSFER ===== */
+
+  function v44B64UrlEncode(str){
+    var bytes=new TextEncoder().encode(str),bin="";
+    bytes.forEach(function(b){bin+=String.fromCharCode(b);});
+    return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+  }
+
+  function v44B64UrlDecode(s){
+    s=String(s||"").replace(/-/g,"+").replace(/_/g,"/");
+    while(s.length%4)s+="=";
+    var bin=atob(s),bytes=Uint8Array.from(bin,function(c){return c.charCodeAt(0);});
+    return new TextDecoder().decode(bytes);
+  }
+
+  mobileTransferUrl=function(){
+    var u=new URL(window.location.href);
+    u.hash="";
+    u.search="";
+    var payload=v44B64UrlEncode(JSON.stringify(v42CompactQrPayload()));
+    u.searchParams.set("t",payload);
+    return u.toString();
+  };
+
+  importTransferFromHash=function(){
+    var raw="",kind="";
+    try{
+      var qp=new URLSearchParams(window.location.search||"");
+      raw=qp.get("t")||"";
+      if(raw)kind="v44";
+
+      if(!raw){
+        raw=qp.get("transfer")||"";
+        if(raw)kind="legacy";
+      }
+
+      if(!raw){
+        var hp=new URLSearchParams((window.location.hash||"").replace(/^#/,""));
+        raw=hp.get("transfer")||"";
+        if(raw)kind="legacy";
+      }
+
+      if(!raw)return false;
+
+      var decoded = kind==="v44"
+        ? v44B64UrlDecode(raw)
+        : b64dec(decodeURIComponent(raw));
+
+      var parsed=JSON.parse(decoded);
+      if(parsed&&parsed.q===2)parsed=v42ExpandQrPayload(parsed);
+
+      if(restorePayload(parsed)){
+        history.replaceState(null,"",window.location.pathname);
+        return true;
+      }
+    }catch(e){
+      console.warn("QR transfer failed",e);
+    }
+    return false;
+  };
+
+  renderQr=function(){
+    var area=document.getElementById("qrArea"),
+        box=document.getElementById("qrCode"),
+        scan=document.getElementById("qrScanText"),
+        copyBtn=document.getElementById("btnCopyMobileLink"),
+        privacy=document.getElementById("qrPrivacy"),
+        url=mobileTransferUrl();
+
+    box.innerHTML="";
+    area.classList.remove("hidden");
+
+    function showFallback(){
+      if(scan)scan.classList.add("hidden");
+      if(copyBtn)copyBtn.classList.add("hidden");
+      if(privacy)privacy.classList.add("hidden");
+      box.innerHTML='<div class="w-full p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-900 space-y-3">'
+        +'<div>'+esc(t("qr_too_long"))+'</div>'
+        +'<button type="button" data-qr-save-file class="w-full py-2.5 px-4 bg-white hover:bg-amber-50 border border-amber-300 rounded-xl font-bold text-amber-900">'+esc(t("qr_save_file"))+'</button>'
+        +'</div>';
+      var b=box.querySelector("[data-qr-save-file]");
+      if(b)b.onclick=function(){downloadSavedFile();showToast(t("file_saved"));};
+    }
+
+    if(url.length>2600 || typeof QRCode==="undefined"){
+      showFallback();
+      return;
+    }
+
+    try{
+      new QRCode(box,{
+        text:url,
+        width:240,
+        height:240,
+        correctLevel:QRCode.CorrectLevel.L
+      });
+
+      setTimeout(function(){
+        var rendered=box.querySelector("canvas,img,table");
+        if(!rendered){
+          showFallback();
+          return;
+        }
+        if(scan)scan.classList.remove("hidden");
+        if(copyBtn)copyBtn.classList.remove("hidden");
+        if(privacy)privacy.classList.remove("hidden");
+      },50);
+    }catch(e){
+      console.warn("QR render failed",e);
+      showFallback();
+    }
+  };
+
+  /* ===== end V4.4 ROBUST QR TRANSFER ===== */
 
 })();
 
