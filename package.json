@@ -1,0 +1,8 @@
+{
+  "name": "sok-bostad",
+  "private": true,
+  "version": "4.5.0",
+  "dependencies": {
+    "@netlify/blobs": "10.7.13"
+  }
+}

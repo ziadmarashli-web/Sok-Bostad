@@ -729,7 +729,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
 
 <script>
 "use strict";
-/* Sök bostad V4.4 – Clean Baseline */
+/* Sök bostad V4.5 – Clean Baseline */
 /* BOLAG_DATA_START */
 var COMPANIES = [{"name":"AB Bostäder i Lidköping","url":"https://www.bostaderlidkoping.se/","orter":["Lidköping"],"note":"kommunal"},{"name":"Alebyggen","url":"https://www.alebyggen.se/","orter":["Ale"],"note":"kommunal"},{"name":"Alingsåshem","url":"https://www.alingsashem.se/","orter":["Alingsås"],"note":"kommunal"},{"name":"Ante Fastigheter","url":"https://antefastigheter.se/","orter":["Alingsås"]},{"name":"Arkblad Fastigheter","url":"https://www.arkbladfastigheter.se/","orter":["Alingsås"]},{"name":"Balder","url":"https://www.balder.se/","orter":["Alingsås","Floda","Lerum"]},{"name":"Bengtsforshus","url":"https://www.bengtsforshus.se/","orter":["Bengtsfors"],"note":"kommunal"},{"name":"Blank & Söner AB","url":"https://blanksoner.se/","orter":["Falköping","Skövde","Skara","Lidköping"]},{"name":"Bofast","url":"https://www.bofast.se/","orter":["Svenljunga","Tranemo"]},{"name":"Bollebo","url":"https://www.bollebo.se/","orter":["Bollebygd"],"note":"kommunal"},{"name":"Boplats","url":"https://boplats.se","orter":["Göteborg","Ale","Alingsås","Kungälv","Lerum","Partille","Mölndal"],"note":"formedling"},{"name":"Bostäder i Borås","url":"https://www.bostaderiboras.se/","orter":["Borås"],"note":"kommunal"},{"name":"CA Fastigheter","url":"https://www.cafastigheter.se/","orter":["Borås"]},{"name":"Cederqvist Fastigheter AB","url":"https://www.cederqvistfastigheter.se/","orter":["Tidaholm","Falköping","Töreboda"]},{"name":"Centrumbostäder i Skara","url":"https://centrumbostader.se/","orter":["Skara"],"note":"kommunal"},{"name":"Derome Förvaltning","url":"https://www.deromeforvaltning.se/","orter":["Göteborg","Mölndal","Mölnlycke"]},{"name":"Edethus","url":"https://edethus.se/","orter":["Lilla Edet"],"note":"kommunal"},{"name":"Edshus (Dals-Ed)","url":"https://www.edshus.se/","orter":["Ed"],"note":"kommunal"},{"name":"Eidar (Trollhättans Bostadsbolag)","url":"https://www.eidar.se/","orter":["Trollhättan"],"note":"kommunal"},{"name":"Ell-K Invest AB","url":"https://www.ell-kinvest.se/","orter":["Falköping"]},{"name":"Essungabostäder","url":"https://www.essungabostader.se/","orter":["Essunga"],"note":"kommunal"},{"name":"Fortinova","url":"https://www.fortinova.se/","orter":["Borås","Göteborg","Götene","Lilla Edet","Uddevalla"]},{"name":"Fristadsbostäder","url":"https://fribo.nu/","orter":["Borås"],"note":"kommunal"},{"name":"Förbo","url":"https://minasidor.foerbo.se/","orter":["Lerum","Floda","Gråbo","Stenkullen","Tollered","Mölndal","Härryda","Kungälv"],"note":"kommunal"},{"name":"Gullspångsbostäder","url":"https://www.gullspangsbostader.se/","orter":["Gullspång"],"note":"kommunal"},{"name":"Götenebostäder","url":"https://www.gotenebostader.se/","orter":["Götene"],"note":"kommunal"},{"name":"Herbo","url":"https://herbo.se/","orter":["Herrljunga"],"note":"kommunal"},{"name":"HomeQ","url":"https://www.homeq.se/","orter":[],"note":"formedling","nationwide":true},{"name":"Hyresbo","url":"https://hyresbo.se/","orter":["Falköping"]},{"name":"Karlsborgsbostäder","url":"https://www.karlsborgsbostader.se/","orter":["Karlsborg"],"note":"kommunal"},{"name":"Knallehem","url":"https://www.knallehem.se/intresseanmalan","orter":["Mark"]},{"name":"Kungälvsbostäder","url":"https://www.kungalvsbostader.se/","orter":["Kungälv"],"note":"kommunal"},{"name":"Kvarteret Lyckebo","url":"https://kvlyckebo.se","orter":["Bollebygd"]},{"name":"Larsson Fastigheter","url":"https://www.larssonsfastigheter.se/","orter":["Borås","Sandared","Ulricehamn"]},{"name":"Lysekilsbostäder","url":"https://www.lysekilsbostader.se/","orter":["Lysekil"],"note":"kommunal"},{"name":"Mariehus","url":"https://mariehus.se/","orter":["Mariestad"],"note":"kommunal"},{"name":"Marks Bostads AB","url":"https://www.marksbostadsab.se/","orter":["Mark"],"note":"kommunal"},{"name":"Mellerudsbostäder","url":"https://mellbo.se/","orter":["Mellerud"],"note":"kommunal"},{"name":"Munkbo","url":"https://www.munkbo.se/","orter":["Munkedal"],"note":"kommunal"},{"name":"Mölndalsbostäder","url":"https://www.molndalsbostader.se/","orter":["Mölndal","Kållered"],"note":"kommunal"},{"name":"Nefast","url":"https://nefast.se/bostader/","orter":["Alingsås"]},{"name":"Olofssons Fastigheter","url":"https://www.olofssonfastigheter.se/","orter":["Borås"]},{"name":"Orustbostäder","url":"https://www.orustbostader.se/","orter":["Orust"],"note":"kommunal"},{"name":"Partillebo","url":"https://www.partillebo.se/","orter":["Partille"],"note":"kommunal"},{"name":"Paxon AB","url":"https://paxon.se/","orter":["Vårgårda","Herrljunga"]},{"name":"PP Fastigheter","url":"https://www.ppfastigheter.se/","orter":["Härryda","Landvetter","Hindås"]},{"name":"Rikshem","url":"https://minasidor.rikshem.se/ledigt-just-nu","orter":["Ale"]},{"name":"Skövdebostäder","url":"https://www.skovdebostader.se/","orter":["Skövde"],"note":"kommunal"},{"name":"Sotenäsbostäder","url":"https://www.sotenasbostader.se/","orter":["Sotenäs"],"note":"kommunal"},{"name":"Strand AB","url":"https://www.strandab.se/","orter":["Bollebygd","Rävlanda","Hindås","Mölnlycke"]},{"name":"Strömstadsbyggen","url":"https://stromstadsbyggen.se/","orter":["Strömstad"],"note":"kommunal"},{"name":"Stubo","url":"https://stubo.se/","orter":["Ulricehamn"],"note":"kommunal"},{"name":"Svenbo","url":"https://www.svenbo.com/","orter":["Svenljunga"],"note":"kommunal"},{"name":"Tanumsbostäder","url":"https://www.tanumsbostader.se/","orter":["Tanum"],"note":"kommunal"},{"name":"Tibrobyggen","url":"https://tibrobyggen.se/","orter":["Tibro"],"note":"kommunal"},{"name":"Tidaholms Bostads AB","url":"https://tbab.se/","orter":["Tidaholm"],"note":"kommunal"},{"name":"Tranemobostäder","url":"https://www.tranemobostader.se/","orter":["Tranemo"],"note":"kommunal"},{"name":"Trollängen","url":"https://www.trollangen.se/","orter":["Göteborg","Vårgårda","Herrljunga"]},{"name":"Törebodabostäder","url":"https://www.torebodabostader.se/","orter":["Töreboda"],"note":"kommunal"},{"name":"Uddevallahem","url":"https://www.uddevallahem.se/","orter":["Uddevalla"],"note":"kommunal"},{"name":"Ullsaxen","url":"https://www.ullsaxen.se/","orter":["Borås","Rydal"]},{"name":"Valbohem (Färgelanda)","url":"https://www.valbohem.se/","orter":["Färgelanda"],"note":"kommunal"},{"name":"VaraBostäder","url":"https://varabostader.se/","orter":["Vara"],"note":"kommunal"},{"name":"Varbergs Bostad","url":"https://www.varbergsbostad.se/","orter":["Varberg"],"note":"kommunal"},{"name":"Visiongruppen","url":"https://visionsgruppen.se/","orter":["Göteborg","Falköping"]},{"name":"Viskaforshem","url":"https://viskaforshem.se/","orter":["Borås"],"note":"kommunal"},{"name":"Vårgårda Bostäder","url":"https://vargardabostader.se/","orter":["Vårgårda"],"note":"kommunal"},{"name":"Vänersborgsbostäder","url":"https://www.vanersborgsbostader.se/","orter":["Vänersborg"],"note":"kommunal"},{"name":"Willhem","url":"https://www.willhem.se/","orter":["Göteborg"]},{"name":"Åmåls Kommunfastigheter","url":"https://www.amalskommunfastigheter.se/","orter":["Åmål"],"note":"kommunal"}];
 /* BOLAG_DATA_END */
@@ -3569,6 +3569,214 @@ function init(){
   };
 
   /* ===== end V4.4 ROBUST QR TRANSFER ===== */
+
+
+  /* ===== V4.5 SHORT ENCRYPTED QR TRANSFER ===== */
+  var V45_I18N={"sv":{"remote_qr_preparing":"Skapar säker QR-kod…","remote_qr_ready":"QR-koden är klar. Skanna med mobilen inom 20 minuter.","remote_qr_failed":"QR-överföringen kunde inte skapas. Spara en fil i stället.","remote_qr_privacy":"Krypterad engångsöverföring. Gäller i 20 minuter och raderas efter lyckad återställning.","remote_restore_loading":"Hämtar din sparade lista…","remote_restore_success":"Listan är återställd på den här enheten.","remote_restore_expired":"QR-koden har gått ut eller redan använts. Skapa en ny QR-kod.","remote_restore_failed":"Listan kunde inte hämtas. Skapa en ny QR-kod eller använd en sparad fil.","remote_copy_link":"Kopiera länk"},"en":{"remote_qr_preparing":"Creating secure QR code…","remote_qr_ready":"QR code is ready. Scan it with your phone within 20 minutes.","remote_qr_failed":"The QR transfer could not be created. Save a file instead.","remote_qr_privacy":"Encrypted one-time transfer. Valid for 20 minutes and deleted after successful restore.","remote_restore_loading":"Retrieving your saved list…","remote_restore_success":"The list has been restored on this device.","remote_restore_expired":"The QR code has expired or was already used. Create a new QR code.","remote_restore_failed":"The list could not be retrieved. Create a new QR code or use a saved file.","remote_copy_link":"Copy link"},"ar":{"remote_qr_preparing":"جارٍ إنشاء رمز QR آمن…","remote_qr_ready":"رمز QR جاهز. امسحه بالهاتف خلال 20 دقيقة.","remote_qr_failed":"تعذر إنشاء نقل QR. احفظ ملفًا بدلًا من ذلك.","remote_qr_privacy":"نقل مشفر لمرة واحدة. صالح لمدة 20 دقيقة ويُحذف بعد الاستعادة الناجحة.","remote_restore_loading":"جارٍ استرجاع قائمتك المحفوظة…","remote_restore_success":"تمت استعادة القائمة على هذا الجهاز.","remote_restore_expired":"انتهت صلاحية رمز QR أو تم استخدامه. أنشئ رمزًا جديدًا.","remote_restore_failed":"تعذر استرجاع القائمة. أنشئ رمز QR جديدًا أو استخدم ملفًا محفوظًا.","remote_copy_link":"نسخ الرابط"},"uk":{"remote_qr_preparing":"Створення безпечного QR-коду…","remote_qr_ready":"QR-код готовий. Відскануйте його телефоном протягом 20 хвилин.","remote_qr_failed":"Не вдалося створити QR-передачу. Збережіть файл.","remote_qr_privacy":"Зашифрована одноразова передача. Діє 20 хвилин і видаляється після успішного відновлення.","remote_restore_loading":"Завантаження збереженого списку…","remote_restore_success":"Список відновлено на цьому пристрої.","remote_restore_expired":"QR-код прострочений або вже використаний. Створіть новий.","remote_restore_failed":"Не вдалося отримати список. Створіть новий QR-код або використайте збережений файл.","remote_copy_link":"Копіювати посилання"},"fa":{"remote_qr_preparing":"در حال ساخت QR امن…","remote_qr_ready":"QR آماده است. ظرف ۲۰ دقیقه با تلفن اسکن کنید.","remote_qr_failed":"انتقال QR ساخته نشد. به‌جای آن فایل ذخیره کنید.","remote_qr_privacy":"انتقال یک‌بارمصرف رمزگذاری‌شده. ۲۰ دقیقه اعتبار دارد و پس از بازیابی موفق حذف می‌شود.","remote_restore_loading":"در حال دریافت فهرست ذخیره‌شده…","remote_restore_success":"فهرست روی این دستگاه بازیابی شد.","remote_restore_expired":"QR منقضی شده یا قبلاً استفاده شده است. QR جدید بسازید.","remote_restore_failed":"فهرست دریافت نشد. QR جدید بسازید یا از فایل ذخیره‌شده استفاده کنید.","remote_copy_link":"کپی لینک"},"so":{"remote_qr_preparing":"Waxaa la samaynayaa QR ammaan ah…","remote_qr_ready":"QR-ku waa diyaar. Ku sawir taleefanka 20 daqiiqo gudahood.","remote_qr_failed":"Wareejinta QR lama samayn karin. Fayl kaydi beddelkeeda.","remote_qr_privacy":"Wareejin hal-mar ah oo la siray. Waxay shaqaynaysaa 20 daqiiqo, kadibna waa la tirtiraa marka la soo celiyo.","remote_restore_loading":"Waxaa la soo qaadayaa liiskaaga…","remote_restore_success":"Liiska ayaa lagu soo celiyey qalabkan.","remote_restore_expired":"QR-ku wuu dhacay ama horay ayaa loo isticmaalay. Samee QR cusub.","remote_restore_failed":"Liiska lama soo qaadi karin. Samee QR cusub ama isticmaal fayl kaydsan.","remote_copy_link":"Nuqul xiriirka"},"ti":{"remote_qr_preparing":"ውሑስ QR ይፍጠር ኣሎ…","remote_qr_ready":"QR ድሉው እዩ። ኣብ 20 ደቒቕ ውሽጢ ብሞባይል ስካን ግበሮ።","remote_qr_failed":"QR ምስግጋር ኣይተፈጥረን። ኣብ ክንድኡ ፋይል ኣቐምጥ።","remote_qr_privacy":"ኢንክሪፕት ዝተገብረ ሓደ-ግዜ ምስግጋር። 20 ደቒቕ ይሰርሕን ድሕሪ ዕዉት ምምላስ ይድምሰስን።","remote_restore_loading":"ዝተቐመጠ ዝርዝርካ ይመጽእ ኣሎ…","remote_restore_success":"ዝርዝሩ ኣብዚ መሳርሒ ተመሊሱ።","remote_restore_expired":"QR ግዜኡ ሓሊፉ ወይ ቀደም ተጠቒሙ። ሓድሽ QR ፍጠር።","remote_restore_failed":"ዝርዝሩ ክመጽእ ኣይከኣለን። ሓድሽ QR ፍጠር ወይ ዝተቐመጠ ፋይል ተጠቐም።","remote_copy_link":"ሊንክ ቅዳሕ"},"rw":{"remote_qr_preparing":"Gukora QR itekanye…","remote_qr_ready":"QR iriteguye. Yisikanishe telefone mu minota 20.","remote_qr_failed":"QR ntiyashoboye gukorwa. Bika dosiye aho kuyikoresha.","remote_qr_privacy":"Iyoherezwa rimwe ryabitswe mu ibanga. Rikora iminota 20 kandi risibwa nyuma yo kugarura neza.","remote_restore_loading":"Kuzana urutonde wabitswe…","remote_restore_success":"Urutonde rwagaruwe kuri iki gikoresho.","remote_restore_expired":"QR yararengeje igihe cyangwa yarakoreshejwe. Kora QR nshya.","remote_restore_failed":"Urutonde ntirwashoboye kuzanwa. Kora QR nshya cyangwa ukoreshe dosiye wabitswe.","remote_copy_link":"Koporora ihuza"},"sw":{"remote_qr_preparing":"Inatengeneza QR salama…","remote_qr_ready":"QR iko tayari. Ichanganue kwa simu ndani ya dakika 20.","remote_qr_failed":"Uhamisho wa QR haukuweza kutengenezwa. Hifadhi faili badala yake.","remote_qr_privacy":"Uhamisho uliosimbwa na wa matumizi moja. Unatumika kwa dakika 20 na kufutwa baada ya kurejesha kwa mafanikio.","remote_restore_loading":"Inaleta orodha yako iliyohifadhiwa…","remote_restore_success":"Orodha imerejeshwa kwenye kifaa hiki.","remote_restore_expired":"QR imekwisha muda au tayari imetumika. Tengeneza QR mpya.","remote_restore_failed":"Orodha haikuweza kupatikana. Tengeneza QR mpya au tumia faili iliyohifadhiwa.","remote_copy_link":"Nakili kiungo"}};
+  Object.keys(V45_I18N).forEach(function(code){
+    REG_I18N[code]=Object.assign(REG_I18N[code]||{},V45_I18N[code]);
+    EXTRA_I18N[code]=Object.assign(EXTRA_I18N[code]||{},V45_I18N[code]);
+  });
+
+  var v45CurrentLink="";
+
+  function v45BytesToB64u(bytes){
+    var bin="";
+    for(var i=0;i<bytes.length;i++)bin+=String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+  }
+  function v45B64uToBytes(s){
+    s=String(s||"").replace(/-/g,"+").replace(/_/g,"/");
+    while(s.length%4)s+="=";
+    var bin=atob(s),out=new Uint8Array(bin.length);
+    for(var i=0;i<bin.length;i++)out[i]=bin.charCodeAt(i);
+    return out;
+  }
+  function v45RandomId(){
+    return v45BytesToB64u(crypto.getRandomValues(new Uint8Array(12)));
+  }
+
+  async function v45EncryptCompactPayload(){
+    if(!window.crypto||!crypto.subtle)throw new Error("Web Crypto unavailable");
+    var key=await crypto.subtle.generateKey({name:"AES-GCM",length:256},true,["encrypt","decrypt"]);
+    var rawKey=new Uint8Array(await crypto.subtle.exportKey("raw",key));
+    var iv=crypto.getRandomValues(new Uint8Array(12));
+    var plain=new TextEncoder().encode(JSON.stringify(v42CompactQrPayload()));
+    var encrypted=new Uint8Array(await crypto.subtle.encrypt({name:"AES-GCM",iv:iv},key,plain));
+    return {
+      key:v45BytesToB64u(rawKey),
+      blob:JSON.stringify({v:1,i:v45BytesToB64u(iv),d:v45BytesToB64u(encrypted)})
+    };
+  }
+
+  async function v45DecryptCompactPayload(blob,keyText){
+    var obj=typeof blob==="string"?JSON.parse(blob):blob;
+    if(!obj||obj.v!==1||!obj.i||!obj.d)throw new Error("Bad encrypted payload");
+    var key=await crypto.subtle.importKey("raw",v45B64uToBytes(keyText),{name:"AES-GCM"},false,["decrypt"]);
+    var plain=await crypto.subtle.decrypt(
+      {name:"AES-GCM",iv:v45B64uToBytes(obj.i)},
+      key,
+      v45B64uToBytes(obj.d)
+    );
+    return JSON.parse(new TextDecoder().decode(plain));
+  }
+
+  function v45ShortLink(id,key){
+    var u=new URL(window.location.origin+window.location.pathname);
+    u.searchParams.set("x",id);
+    u.hash="k="+encodeURIComponent(key);
+    return u.toString();
+  }
+
+  function v45ShowQrMessage(message,kind){
+    var box=document.getElementById("qrCode");
+    if(!box)return;
+    var cls=kind==="error"?"bg-amber-50 border-amber-200 text-amber-900":"bg-brand-50 border-brand-100 text-brand-800";
+    box.innerHTML='<div class="w-full p-4 border rounded-xl text-sm '+cls+'">'+esc(message)+'</div>';
+  }
+
+  async function v45PrepareRemoteQr(){
+    var area=document.getElementById("qrArea"),
+        box=document.getElementById("qrCode"),
+        scan=document.getElementById("qrScanText"),
+        copyBtn=document.getElementById("btnCopyMobileLink"),
+        privacy=document.getElementById("qrPrivacy");
+
+    area.classList.remove("hidden");
+    if(scan)scan.classList.add("hidden");
+    if(copyBtn)copyBtn.classList.add("hidden");
+    if(privacy)privacy.classList.remove("hidden");
+    if(privacy)privacy.textContent=t("remote_qr_privacy");
+    v45ShowQrMessage(t("remote_qr_preparing"));
+    v45CurrentLink="";
+
+    try{
+      var id=v45RandomId();
+      var encrypted=await v45EncryptCompactPayload();
+
+      var response=await fetch("/api/transfer",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        cache:"no-store",
+        body:JSON.stringify({id:id,data:encrypted.blob})
+      });
+
+      if(!response.ok)throw new Error("transfer create "+response.status);
+
+      var link=v45ShortLink(id,encrypted.key);
+      v45CurrentLink=link;
+      box.innerHTML="";
+
+      new QRCode(box,{
+        text:link,
+        width:240,
+        height:240,
+        correctLevel:QRCode.CorrectLevel.M
+      });
+
+      var rendered=box.querySelector("canvas,img,table");
+      if(!rendered)throw new Error("QR did not render");
+
+      if(scan){
+        scan.textContent=t("remote_qr_ready");
+        scan.classList.remove("hidden");
+      }
+      if(copyBtn){
+        copyBtn.textContent=t("remote_copy_link");
+        copyBtn.classList.remove("hidden");
+      }
+      if(privacy)privacy.textContent=t("remote_qr_privacy");
+    }catch(e){
+      console.error("Remote QR create failed",e);
+      v45ShowQrMessage(t("remote_qr_failed"),"error");
+      if(copyBtn)copyBtn.classList.add("hidden");
+    }
+  }
+
+  saveChoiceToQr=function(){
+    closeSaveChoice();
+    switchTab("list");
+    var card=document.getElementById("qrTransferCard");
+    card.classList.remove("hidden");
+    v45PrepareRemoteQr();
+    setTimeout(function(){
+      var el=document.getElementById("qrArea");
+      if(el)el.scrollIntoView({behavior:"smooth",block:"center"});
+    },60);
+  };
+
+  renderQr=function(){return v45PrepareRemoteQr();};
+
+  async function v45ConsumeRemoteTransfer(){
+    var u=new URL(window.location.href);
+    var id=u.searchParams.get("x");
+    var hp=new URLSearchParams((window.location.hash||"").replace(/^#/,""));
+    var keyText=hp.get("k")||"";
+    if(!id&&!keyText)return false;
+    if(!id||!keyText){
+      history.replaceState(null,"",window.location.pathname);
+      showToast(t("remote_restore_failed"));
+      return false;
+    }
+
+    showToast(t("remote_restore_loading"));
+    try{
+      var response=await fetch("/api/transfer?id="+encodeURIComponent(id),{
+        method:"GET",cache:"no-store",headers:{"Accept":"application/json"}
+      });
+      if(response.status===404||response.status===410){
+        history.replaceState(null,"",window.location.pathname);
+        showToast(t("remote_restore_expired"));
+        return false;
+      }
+      if(!response.ok)throw new Error("transfer get "+response.status);
+
+      var data=await response.json();
+      var compact=await v45DecryptCompactPayload(data.data,keyText);
+      var payload=v42ExpandQrPayload(compact);
+      if(!payload||!restorePayload(payload))throw new Error("restore failed");
+
+      history.replaceState(null,"",window.location.pathname);
+      buildLangSelect();
+      applyLang();
+      renderResults();
+      updateListCount();
+      switchTab("list");
+      renderList();
+      showToast(t("remote_restore_success"));
+
+      /* Delete only after successful decrypt + restore. */
+      fetch("/api/transfer?id="+encodeURIComponent(id),{
+        method:"DELETE",cache:"no-store"
+      }).catch(function(){});
+      return true;
+    }catch(e){
+      console.error("Remote QR restore failed",e);
+      history.replaceState(null,"",window.location.pathname);
+      showToast(t("remote_restore_failed"));
+      return false;
+    }
+  }
+
+  var v45OldInit=init;
+  init=function(){
+    v45OldInit();
+
+    var qrBtn=document.getElementById("btnShowQr");
+    if(qrBtn)qrBtn.onclick=v45PrepareRemoteQr;
+
+    var copyBtn=document.getElementById("btnCopyMobileLink");
+    if(copyBtn)copyBtn.onclick=function(){
+      if(!v45CurrentLink)return;
+      copyText(v45CurrentLink)
+        .then(function(){showToast(t("copy_success"));})
+        .catch(function(){showToast(t("copy_failed"));});
+    };
+
+    /* Async restore for short QR links. */
+    setTimeout(v45ConsumeRemoteTransfer,0);
+  };
+  /* ===== end V4.5 SHORT ENCRYPTED QR TRANSFER ===== */
 
 })();
 
